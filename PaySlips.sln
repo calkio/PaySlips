@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2EA7DDBA-C567-4AC4-9370-71D91D5BB850}"
 EndProject
@@ -19,7 +19,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4863FA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E84F6235-FF17-4EA6-B0D3-E080F5FC21DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaySlips.Core", "PaySlips.Core\PaySlips.Core.csproj", "{5687FD66-A153-4B14-BFFE-E0C4750DAD35}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5687FD66-A153-4B14-BFFE-E0C4750DAD35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5687FD66-A153-4B14-BFFE-E0C4750DAD35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5687FD66-A153-4B14-BFFE-E0C4750DAD35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5687FD66-A153-4B14-BFFE-E0C4750DAD35}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
@@ -29,5 +41,6 @@ Global
 		{EB34CE4C-CDC9-4490-858C-04478432E4D5} = {2EA7DDBA-C567-4AC4-9370-71D91D5BB850}
 		{4863FA10-C8DA-4B48-9587-DEC27012BC90} = {2EA7DDBA-C567-4AC4-9370-71D91D5BB850}
 		{E84F6235-FF17-4EA6-B0D3-E080F5FC21DD} = {2EA7DDBA-C567-4AC4-9370-71D91D5BB850}
+		{5687FD66-A153-4B14-BFFE-E0C4750DAD35} = {E84F6235-FF17-4EA6-B0D3-E080F5FC21DD}
 	EndGlobalSection
 EndGlobal
