@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using PaySlips.UI.Infastructure;
-using PaySlips.UI.ViewModel.Base;
+﻿using PaySlips.UI.ViewModel.Base;
 
-namespace PaySlips.UI.ViewModel
+namespace PaySlips.UI.ViewModel.Workspace.Base
 {
-    internal class ExampleVM2 : BaseVM
+    internal class WorkspaceVM : BaseVM
     {
         #region ПОЛЯ
 
@@ -29,7 +22,7 @@ namespace PaySlips.UI.ViewModel
         #endregion
 
 
-        public ExampleVM2(MainVM mvvm)
+        public WorkspaceVM(MainVM mvvm)
         {
             _mvvm = mvvm;
         }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Microsoft.Win32;
-using PaySlips.UI.Infastructure;
-using PaySlips.UI.ViewModel.Base;
+﻿using PaySlips.UI.ViewModel.Base;
+using PaySlips.UI.ViewModel.Menu.Base;
+using PaySlips.UI.ViewModel.Workspace.Base;
 
 namespace PaySlips.UI.ViewModel
 {
@@ -14,15 +8,19 @@ namespace PaySlips.UI.ViewModel
     {
         #region СВОЙСТВА
 
-        private BaseVM _content;
-        public BaseVM Content { get => _content; set => Set(ref _content, value); }
+        private BaseVM _menuVM;
+        public BaseVM MenuVM { get => _menuVM; set => Set(ref _menuVM, value); }
+
+
+        private BaseVM _workspaceVM;
+        public BaseVM WorkspaceVM { get => _workspaceVM; set => Set(ref _workspaceVM, value); }
 
         #endregion
 
         public MainVM()
         {
-            ExampleVM exampleVM = new ExampleVM(this);
-            _content = exampleVM;
+            MenuVM = new MenuVM(this);
+            WorkspaceVM = new WorkspaceVM(this);
         }
     }
 }

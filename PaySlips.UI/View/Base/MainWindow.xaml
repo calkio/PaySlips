@@ -4,21 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PaySlips.UI"
-        xmlns:views="clr-namespace:PaySlips.UI.View"
-        xmlns:vm="clr-namespace:PaySlips.UI.ViewModel"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:viewMenu="clr-namespace:PaySlips.UI.View.Menu.Base"
+        xmlns:vmMenu="clr-namespace:PaySlips.UI.ViewModel.Menu.Base"
+        xmlns:viewWorkspace="clr-namespace:PaySlips.UI.View.Workspace.Base"
+        xmlns:vmWorkspace="clr-namespace:PaySlips.UI.ViewModel.Workspace.Base"
+        mc:Ignorable="d" Title="{Binding Title}"
+        WindowState="Maximized"
+        Height="1080" Width="1920">
     <Window.Resources>
 
-        <DataTemplate DataType="{x:Type vm:ExampleVM}">
-            <views:Example/>
+        <DataTemplate DataType="{x:Type vmMenu:MenuVM}">
+            <viewMenu:MenuView/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vm:ExampleVM2}">
-            <views:Example2/>
+        <DataTemplate DataType="{x:Type vmWorkspace:WorkspaceVM}">
+            <viewWorkspace:WorkspaceView/>
         </DataTemplate>
 
     </Window.Resources>
 
-    <ContentPresenter Content="{Binding Content}"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0,177*"/>
+            <ColumnDefinition Width="0,823*"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentPresenter Content="{Binding MenuVM}"
+                          Grid.Column="0"/>
+        <ContentPresenter Content="{Binding WorkspaceVM}"
+                          Grid.Column="1"/>
+    </Grid>
 </Window>

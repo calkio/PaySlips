@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PaySlips.UI.View
+namespace PaySlips.UI.View.Workspace.Base
 {
     /// <summary>
-    /// Логика взаимодействия для Example2.xaml
+    /// Логика взаимодействия для WorkspaceView.xaml
     /// </summary>
-    public partial class Example2 : UserControl
+    public partial class WorkspaceView : UserControl
     {
-        public Example2()
+        public WorkspaceView()
         {
             InitializeComponent();
         }
