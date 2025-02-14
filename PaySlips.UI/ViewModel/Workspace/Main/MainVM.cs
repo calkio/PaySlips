@@ -1,11 +1,16 @@
 ﻿using PaySlips.UI.Infastructure.Command;
 using PaySlips.UI.ViewModel.Base;
 using PaySlips.UI.ViewModel.Component;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace PaySlips.UI.ViewModel.Menu.Base
+namespace PaySlips.UI.ViewModel.Workspace.Main
 {
-    internal class MenuVM : BaseVM
+    class MainVM : BaseVM
     {
         #region ПОЛЯ
 
@@ -34,14 +39,13 @@ namespace PaySlips.UI.ViewModel.Menu.Base
         private bool CanShowSecondUserControl() => true;
         private void ShowSecondUserControlImpl()
         {
-            _mvvm.WorkspaceVM = new FileButtonVM(_mvvm);
         }
 
 
         #endregion
 
 
-        public MenuVM(MainVM mvvm)
+        public MainVM(MainVM mvvm)
         {
             _mvvm = mvvm;
         }

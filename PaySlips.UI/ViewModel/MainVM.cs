@@ -8,10 +8,13 @@ namespace PaySlips.UI.ViewModel
     {
         #region СВОЙСТВА
 
+        private string _title;
+        public string Title { get => _title; set => Set(ref _title, value); }
+
         private BaseVM _menuVM;
         public BaseVM MenuVM { get => _menuVM; set => Set(ref _menuVM, value); }
 
-
+            
         private BaseVM _workspaceVM;
         public BaseVM WorkspaceVM { get => _workspaceVM; set => Set(ref _workspaceVM, value); }
 
@@ -19,6 +22,7 @@ namespace PaySlips.UI.ViewModel
 
         public MainVM()
         {
+            Title = "Говно из жопы";
             MenuVM = new MenuVM(this);
             WorkspaceVM = new WorkspaceVM(this);
         }

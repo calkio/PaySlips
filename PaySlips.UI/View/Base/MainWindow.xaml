@@ -8,6 +8,8 @@
         xmlns:vmMenu="clr-namespace:PaySlips.UI.ViewModel.Menu.Base"
         xmlns:viewWorkspace="clr-namespace:PaySlips.UI.View.Workspace.Base"
         xmlns:vmWorkspace="clr-namespace:PaySlips.UI.ViewModel.Workspace.Base"
+        xmlns:viewComponent="clr-namespace:PaySlips.UI.View.Component"
+        xmlns:vmComponent="clr-namespace:PaySlips.UI.ViewModel.Component"
         mc:Ignorable="d" Title="{Binding Title}"
         WindowState="Maximized"
         Height="1080" Width="1920">
@@ -19,6 +21,10 @@
 
         <DataTemplate DataType="{x:Type vmWorkspace:WorkspaceVM}">
             <viewWorkspace:WorkspaceView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmComponent:FileButtonVM}">
+            <viewComponent:FileButtonView/>
         </DataTemplate>
 
     </Window.Resources>
