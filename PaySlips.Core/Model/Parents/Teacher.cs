@@ -9,6 +9,6 @@ namespace PaySlips.Core.Model.Parents
         public string AcademicDegree { get; set; }
         public string AcademicTitle { get; set; }
         public string JobTitle { get; set; }
-        public TimeSlot TimeSlot { get; set; }
+        public List<TimeSlot> TimeSlot { get; set; }
     }
 }

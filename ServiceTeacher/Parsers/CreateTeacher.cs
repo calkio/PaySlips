@@ -1,6 +1,7 @@
 ﻿using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Requests;
 using PaySlips.Core.Model.Parents;
 
 namespace ServiceTeacher.Parsers
@@ -10,10 +11,11 @@ namespace ServiceTeacher.Parsers
         private readonly string _pathFile;
         private readonly int ROW_FULL_NAME_TEACHER = 4;
         private readonly int CELL_FULL_NAME_TEACHER = 1;
+        private readonly int START_SHEET_INDEX = 1;
 
-        public CreateTeacher(string pathFile)
+        public CreateTeacher(NoLessonTeacherRequest request)
         {
-            _pathFile = pathFile ?? throw new ArgumentNullException(nameof(pathFile));
+            _pathFile = request.PathFileScheduler ?? throw new ArgumentNullException(nameof(request.PathFileScheduler));
         }
 
         public async Task<IEnumerable<Teacher>> CreateAllTeacher()
@@ -35,10 +37,9 @@ namespace ServiceTeacher.Parsers
 
             using (var fs = new FileStream(_pathFile, FileMode.Open, FileAccess.Read))
             {
-                if (_pathFile.EndsWith(".xlsx"))
-                    workbook = new XSSFWorkbook(fs); // Для .xlsx
-                else
-                    workbook = new HSSFWorkbook(fs); // Для .xls
+                workbook = _pathFile.EndsWith(".xlsx")
+                    ? new XSSFWorkbook(fs) // Для .xlsx
+                    : new HSSFWorkbook(fs); // Для .xls
             }
 
             return workbook;
@@ -47,7 +48,7 @@ namespace ServiceTeacher.Parsers
         private IEnumerable<Teacher> ParserTeacher(IWorkbook workbook)
         {
             List<Teacher> teachers = new List<Teacher>();
-            for (int sheetIndex = 1; sheetIndex < workbook.NumberOfSheets; sheetIndex++)
+            for (int sheetIndex = START_SHEET_INDEX; sheetIndex < workbook.NumberOfSheets; sheetIndex++)
             {
                 ISheet sheet = workbook.GetSheetAt(sheetIndex);
                 string teacherName = sheet.GetRow(ROW_FULL_NAME_TEACHER).GetCell(CELL_FULL_NAME_TEACHER).StringCellValue;

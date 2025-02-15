@@ -1,5 +1,6 @@
-﻿using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Service;
-using PaySlips.Core.Model.Parents;
+﻿using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Requests;
+using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Responses;
+using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Service;
 
 namespace ServiceTeacher
 {
@@ -12,9 +13,13 @@ namespace ServiceTeacher
             _serviceTeacher = serviceTeacher ?? throw new ArgumentNullException(nameof(serviceTeacher));
         }
 
-        public async Task<IEnumerable<Teacher>> GetAllTeacherNoLesson(string pathFile)
+        public async Task<NoLessonTeacherResponses> GetAllTeacherNoLesson(NoLessonTeacherRequest request)
         {
-            return await _serviceTeacher.GetAllTeacherNoLesson(pathFile);
+            return await _serviceTeacher.GetAllTeacherNoLesson(request);
+        }
+        public async Task<FilledTeacherResponses> GetAllFilledTeacher(FilledTeacherRequest request)
+        {
+            return await _serviceTeacher.GetAllFilledTeacher(request);
         }
     }
 }

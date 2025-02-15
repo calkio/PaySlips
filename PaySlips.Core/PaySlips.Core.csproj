@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Abstraction\ServiceTeacherAbstraction\Responses\" />
-    <Folder Include="Abstraction\ServiceTeacherAbstraction\Requests\" />
-  </ItemGroup>
-
 </Project>
