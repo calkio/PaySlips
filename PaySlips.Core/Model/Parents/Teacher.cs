@@ -1,4 +1,5 @@
-﻿using LessonModel = PaySlips.Core.Model.Lesson.Lesson;
+﻿using PaySlips.Core.Model.Teacher;
+using LessonModel = PaySlips.Core.Model.Lesson.Lesson;
 
 namespace PaySlips.Core.Model.Parents
 {
@@ -8,5 +9,6 @@ namespace PaySlips.Core.Model.Parents
         public string AcademicDegree { get; set; }
         public string AcademicTitle { get; set; }
         public string JobTitle { get; set; }
+        public TimeSlot TimeSlot { get; set; }
     }
 }
