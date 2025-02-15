@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstraction\ServiceTeacherAbstraction\Responses\" />
-    <Folder Include="Abstraction\ServiceTeacherAbstraction\Requests\" />
+    <ProjectReference Include="..\PaySlips.Core\PaySlips.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.7.2" />
   </ItemGroup>
 
 </Project>
