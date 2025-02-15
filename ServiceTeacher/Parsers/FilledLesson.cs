@@ -70,8 +70,18 @@ namespace ServiceTeacher.Parsers
                         continue;
                     }
                     DayOfWeek day = ParserDay(ref dayStr, row);
+
                     (TimeSpan startTime, TimeSpan endTime) = ParserTime(row);
+                    if (startTime == TimeSpan.Zero || endTime == TimeSpan.Zero)
+                    {
+                        continue;
+                    }
                     (string? evenSubject, string? oddSubject) = ParserSubject(row);
+
+                    if (string.IsNullOrEmpty(evenSubject) && string.IsNullOrEmpty(oddSubject))
+                    {
+                        continue;
+                    }
 
                     var slot = new TimeSlot
                     {

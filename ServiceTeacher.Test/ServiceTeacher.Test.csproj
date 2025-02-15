@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TestFiles\Scheduler.xls" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="Moq" Version="4.20.72" />
@@ -19,6 +23,12 @@
   <ItemGroup>
     <ProjectReference Include="..\PaySlips.Core\PaySlips.Core.csproj" />
     <ProjectReference Include="..\ServiceTeacher\ServiceTeacher.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestFiles\Scheduler.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
