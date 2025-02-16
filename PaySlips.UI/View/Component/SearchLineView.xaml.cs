@@ -18,9 +18,9 @@ namespace PaySlips.UI.View.Component
     /// <summary>
     /// Логика взаимодействия для SearchLine.xaml
     /// </summary>
-    public partial class SearchLine : UserControl
+    public partial class SearchLineView : UserControl
     {
-        public SearchLine()
+        public SearchLineView()
         {
             InitializeComponent();
         }

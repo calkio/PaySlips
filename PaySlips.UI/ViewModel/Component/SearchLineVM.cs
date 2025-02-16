@@ -1,11 +1,15 @@
 ﻿using PaySlips.UI.Infastructure.Command;
 using PaySlips.UI.ViewModel.Base;
-using PaySlips.UI.ViewModel.Component;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace PaySlips.UI.ViewModel.Workspace.Archive
+namespace PaySlips.UI.ViewModel.Component
 {
-    class ArchiveVM : BaseVM
+    internal class SearchLineVM : BaseVM
     {
         #region ПОЛЯ
 
@@ -15,8 +19,8 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
 
         #region СВОЙСТВА
 
-        private BaseVM _search;
-        public BaseVM Search { get => _search; set => Set(ref _search, value); }
+        private string _firstLabel = "Hello world1";
+        public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
 
         #endregion
 
@@ -40,15 +44,9 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
         #endregion
 
 
-        public ArchiveVM(MainVM mvvm)
+        public SearchLineVM(MainVM mvvm)
         {
             _mvvm = mvvm;
-            Search = new SearchLineVM(mvvm);
-
-
         }
-
-
     }
-
 }
