@@ -7,6 +7,26 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Поле для ввода текста -->
+        <TextBox Grid.Column="0"
+             Margin="4"
+             VerticalAlignment="Center"
+             HorizontalContentAlignment="Stretch"
+             Padding="10,0,30,0">
+
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="Background" Value="#F7F7F7"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        
     </Grid>
 </UserControl>
