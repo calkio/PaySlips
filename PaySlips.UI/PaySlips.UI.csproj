@@ -10,9 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewModel\Workspace\Reference\" />
-    <Folder Include="ViewModel\Workspace\Templates\" />
-    <Folder Include="ViewModel\Workspace\Trash\" />
   </ItemGroup>
 
 </Project>

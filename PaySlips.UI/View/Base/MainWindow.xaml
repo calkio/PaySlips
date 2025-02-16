@@ -1,27 +1,76 @@
 ﻿<Window x:Class="PaySlips.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PaySlips.UI"
+        xmlns:local="clr-namespace:PaySlips.UI"        
+        mc:Ignorable="d"
+        
+        xmlns:viewTitle="clr-namespace:PaySlips.UI.View.Base"
+        xmlns:vmTitle="clr-namespace:PaySlips.UI.ViewModel"
+        
         xmlns:viewMenu="clr-namespace:PaySlips.UI.View.Menu.Base"
         xmlns:vmMenu="clr-namespace:PaySlips.UI.ViewModel.Menu.Base"
-        xmlns:viewWorkspace="clr-namespace:PaySlips.UI.View.Workspace.Base"
-        xmlns:vmWorkspace="clr-namespace:PaySlips.UI.ViewModel.Workspace.Base"
+
         xmlns:viewComponent="clr-namespace:PaySlips.UI.View.Component"
         xmlns:vmComponent="clr-namespace:PaySlips.UI.ViewModel.Component"
-        mc:Ignorable="d" Title="{Binding Title}"
-        WindowState="Maximized"
+        
+        xmlns:viewArchive="clr-namespace:PaySlips.UI.View.Workspace.Archive"
+        xmlns:vmArchive="clr-namespace:PaySlips.UI.ViewModel.Workspace.Archive"
+        
+        xmlns:viewWM="clr-namespace:PaySlips.UI.View.Workspace.Main"
+        xmlns:vmWM="clr-namespace:PaySlips.UI.ViewModel.Workspace.Main"
+        
+        xmlns:viewPayslips="clr-namespace:PaySlips.UI.View.Workspace.Payslips"
+        xmlns:vmPayslips="clr-namespace:PaySlips.UI.ViewModel.Workspace.Payslips"
+        
+        xmlns:viewReference="clr-namespace:PaySlips.UI.View.Workspace.Reference"
+        xmlns:vmReference="clr-namespace:PaySlips.UI.ViewModel.Workspace.Reference"
+        
+        xmlns:viewTemplates="clr-namespace:PaySlips.UI.View.Workspace.Templates"
+        xmlns:vmTemplates="clr-namespace:PaySlips.UI.ViewModel.Workspace.Templates"
+        
+        xmlns:viewTrash="clr-namespace:PaySlips.UI.View.Workspace.Trash"
+        xmlns:vmTrash="clr-namespace:PaySlips.UI.ViewModel.Workspace.Trash"
+        
+        WindowStyle="None" ResizeMode="CanResizeWithGrip" WindowState="Maximized"
         Height="1080" Width="1920">
+
     <Window.Resources>
+
+        <DataTemplate DataType="{x:Type vmTitle:TitleBarVM}">
+            <viewTitle:TitleBarView/>
+        </DataTemplate>
 
         <DataTemplate DataType="{x:Type vmMenu:MenuVM}">
             <viewMenu:MenuView/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vmWorkspace:WorkspaceVM}">
-            <viewWorkspace:WorkspaceView/>
+        <DataTemplate DataType="{x:Type vmArchive:ArchiveVM}">
+            <viewArchive:ArchiveView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmWM:WorkspaceMainVM}">
+            <viewWM:MainView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmPayslips:PayslipsVM}">
+            <viewPayslips:PayslipsView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmTemplates:TemplatesVM}">
+            <viewTemplates:TemplatesView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmReference:ReferenceVM}">
+            <viewReference:ReferenceView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmTrash:TrashVM}">
+            <viewTrash:TrashView/>
+        </DataTemplate>
+
 
         <DataTemplate DataType="{x:Type vmComponent:FileButtonVM}">
             <viewComponent:FileButtonView/>
@@ -30,14 +79,24 @@
     </Window.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0,177*"/>
-            <ColumnDefinition Width="0,823*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <ContentPresenter Content="{Binding MenuVM}"
+        <ContentPresenter Content="{Binding TitleBarVM}"
+                          Grid.Row="0"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0,177*"/>
+                <ColumnDefinition Width="0,823*"/>
+            </Grid.ColumnDefinitions>
+
+            <ContentPresenter Content="{Binding MenuVM}"
                           Grid.Column="0"/>
-        <ContentPresenter Content="{Binding WorkspaceVM}"
+            <ContentPresenter Content="{Binding WorkspaceVM}"
                           Grid.Column="1"/>
+        </Grid>
     </Grid>
 </Window>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="PaySlips.UI.View.Base.TitleBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PaySlips.UI.View.Base"
+             xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+             MouseDown="TitleBar_MouseDown"
+             mc:Ignorable="d" 
+             d:DesignHeight="53" d:DesignWidth="1920">
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Заголовок окна -->
+        <TextBlock Text="{Binding Title}"
+               VerticalAlignment="Center"
+               Margin="10,0,0,0"
+               Foreground="Black"
+               FontSize="14"
+               shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+
+        <!-- Кнопки управления окном -->
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <Button Content="—"
+              Command="{Binding MinimizeCommand}"
+              Width="40" Height="40"
+              Background="Transparent"
+              Foreground="Black"
+              shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+
+
+            <Button Content="□"
+              Command="{Binding MaximizeCommand}"
+              Width="40" Height="40"
+              Background="Transparent"
+              Foreground="Black"
+              shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+
+
+            <Button Content="X"
+              Command="{Binding CloseCommand}"
+              Width="40" Height="40"
+              Background="Transparent"
+              Foreground="Black"
+              shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

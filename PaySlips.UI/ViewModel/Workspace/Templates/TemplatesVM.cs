@@ -2,9 +2,9 @@
 using PaySlips.UI.ViewModel.Base;
 using System.Windows.Input;
 
-namespace PaySlips.UI.ViewModel.Workspace.Payslips
+namespace PaySlips.UI.ViewModel.Workspace.Templates
 {
-    class PayslipsVM : BaseVM
+    internal class TemplatesVM : BaseVM
     {
         #region ПОЛЯ
 
@@ -39,7 +39,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Payslips
         #endregion
 
 
-        public PayslipsVM(MainVM mvvm)
+        public TemplatesVM(MainVM mvvm)
         {
             _mvvm = mvvm;
         }
