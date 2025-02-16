@@ -19,7 +19,10 @@ namespace PaySlips.UI.ViewModel.Component
 
         private string _title;
         public string Title { get => _title; set => Set(ref _title, value); }
-        
+
+        private string _text;
+        public string Text { get => _text; set => Set(ref _title, value); }
+
         private IEnumerable<BaseVM> _items;
         public IEnumerable<BaseVM> Items { get => _items; set => Set(ref _items, value); }
 

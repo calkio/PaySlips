@@ -48,6 +48,7 @@ namespace PaySlips.UI.ViewModel
 
         #endregion
 
+
         #endregion
 
         public MainVM()
