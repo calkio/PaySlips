@@ -48,7 +48,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
         {
             _mvvm = mvvm;
             ObservableCollection<BaseVM> buttons = new ObservableCollection<BaseVM>();
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 150; i++)
             {
                 buttons.Add(new FileButtonVM(_mvvm));
             }

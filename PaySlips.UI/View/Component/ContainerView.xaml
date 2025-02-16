@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border BorderThickness="2" CornerRadius="6" 
+        <Border BorderThickness="4" CornerRadius="6" 
                 BorderBrush="#005FA8">
             <Grid>
                 <Grid.RowDefinitions>
@@ -15,7 +15,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Border BorderThickness="2"  CornerRadius="6,6,0,0" Margin="-1" 
+                <Border BorderThickness="0"  CornerRadius="6,6,0,0" Margin="-2"  
                         BorderBrush="#005FA8" Background="#005FA8">
                     <StackPanel  Grid.Row="0">
                         <Label Content="{Binding Title}" 
@@ -30,7 +30,10 @@
                 </Border>
 
 
-                <ScrollViewer Grid.Row="1" Margin="10">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Auto"
+                              Grid.Row="1" Margin="3" 
+                              Style="{StaticResource BeautifulScrollViewerStyle}">
                     <ItemsControl ItemsSource="{Binding Items}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
