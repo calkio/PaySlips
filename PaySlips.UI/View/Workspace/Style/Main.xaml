@@ -37,4 +37,142 @@
     </Style>
     <!--#endregion-->
 
+    <!--#region Скрол -->
+    <Style x:Key="BeautifulScrollViewerStyle" TargetType="ScrollViewer">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollViewer">
+                    <Border 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="{TemplateBinding Padding}"
+                    CornerRadius="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Основной контент -->
+                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                Grid.Column="0"/>
+
+                            <!-- Вертикальный ScrollBar -->
+                            <ScrollBar x:Name="PART_VerticalScrollBar"
+                                   Grid.Column="1"
+                                   Orientation="Vertical"
+                                   Style="{DynamicResource CustomScrollBarStyle}"
+                                   Value="{TemplateBinding VerticalOffset}"
+                                   Maximum="{TemplateBinding ScrollableHeight}"
+                                   ViewportSize="{TemplateBinding ViewportHeight}"
+                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                   Margin="4,0,0,0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для Thumb (ползунка) -->
+    <Style x:Key="CustomScrollBarThumbStyle" TargetType="Thumb">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Border CornerRadius="4" 
+                            Margin="3"
+                                Background="#0D63B9"  
+                                BorderBrush="Transparent"
+                                BorderThickness="0"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Основной стиль для ScrollBar -->
+    <Style x:Key="CustomScrollBarStyle" TargetType="{x:Type ScrollBar}">
+        <!-- Можно убрать/изменить Orientation и ширину, если требуется горизонтальный ScrollBar -->
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollBar">
+                    <Border Background="#E0E0E0" CornerRadius="4">
+                        <Grid>
+                            <Track x:Name="PART_Track"
+                                   Orientation="{TemplateBinding Orientation}"
+                                   Focusable="false" 
+                            IsDirectionReversed="true">
+                                <!-- Кнопки прокрутки скрыты (если не нужны) -->
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Visibility="Collapsed"/>
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Visibility="Collapsed"/>
+                                </Track.IncreaseRepeatButton>
+
+                                <!-- Ползунок со своим стилем -->
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource CustomScrollBarThumbStyle}"/>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region MenuButton -->
+
+    <Style x:Key="SideMenuItemStyle" TargetType="ListBoxItem">
+        <!-- Базовые настройки: синий фон, белый текст -->
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="15,8"/>
+
+        <!-- Переопределяем шаблон элемента списка -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border x:Name="border" Padding="20" BorderThickness="0"
+                            CornerRadius="20,0,0,20" BorderBrush="Transparent"
+                                Background="{TemplateBinding Background}">
+                        <ContentPresenter 
+                                Margin="20, 0, 0, 0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <!-- Подсветка при наведении -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Trigger>
+                        <!-- Стиль при выборе (активный пункт меню) -->
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="#003366"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+
 </ResourceDictionary>

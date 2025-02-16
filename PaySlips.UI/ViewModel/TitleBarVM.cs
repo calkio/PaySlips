@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 using PaySlips.UI.Infastructure.Command;
+using System.Windows.Media.Imaging;
 
 namespace PaySlips.UI.ViewModel
 {
@@ -29,6 +30,13 @@ namespace PaySlips.UI.ViewModel
 
         private string _title;
         public string Title { get => _title; set => Set(ref _title, value); }
+
+        public BitmapImage Minimize { get; } = new BitmapImage(
+            new Uri(@"pack://application:,,,/Media/Img/Minimize.png"));
+        public BitmapImage Expand { get; } = new BitmapImage(
+            new Uri(@"pack://application:,,,/Media/Img/Expand.png"));
+        public BitmapImage Close { get; } = new BitmapImage(
+            new Uri(@"pack://application:,,,/Media/Img/Close.png"));
 
         #endregion
 

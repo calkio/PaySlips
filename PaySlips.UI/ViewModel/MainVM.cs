@@ -48,12 +48,12 @@ namespace PaySlips.UI.ViewModel
 
         #endregion
 
+
         #endregion
 
         public MainVM()
         {
             TitleBarVM = new TitleBarVM(this);
-            MenuVM = new MenuVM(this);
             ArchiveVM = new ArchiveVM(this);
             WorkspaceMainVM = new WorkspaceMainVM(this);
             PayslipsVM = new PayslipsVM(this);
@@ -61,6 +61,7 @@ namespace PaySlips.UI.ViewModel
             TemplatesVM = new TemplatesVM(this);
             TrashVM = new TrashVM(this);
             WorkspaceVM = WorkspaceMainVM;
+            MenuVM = new MenuVM(this);
         }
     }
 }

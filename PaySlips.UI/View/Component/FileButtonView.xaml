@@ -8,6 +8,6 @@
              d:DesignHeight="1080" d:DesignWidth="1531">
     <Grid>
         <Button Content="Кнопка" Style="{StaticResource SButton}" 
-                Height="40" Width="80"/>
+                Height="100" Width="100" Margin="20"/>
     </Grid>
 </UserControl>

@@ -35,6 +35,8 @@
         xmlns:vmTrash="clr-namespace:PaySlips.UI.ViewModel.Workspace.Trash"
         
         WindowStyle="None" ResizeMode="CanResizeWithGrip" WindowState="Maximized"
+        BorderBrush="Transparent" BorderThickness="2" 
+        AllowsTransparency="True" Background="Transparent"
         Height="1080" Width="1920">
 
     <Window.Resources>
@@ -82,25 +84,28 @@
 
     </Window.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Border CornerRadius="8" BorderThickness="2" BorderBrush="#003366">
+        <Grid Background="White" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <ContentPresenter Content="{Binding TitleBarVM}"
-                          Grid.Row="0"/>
+            <ContentPresenter Content="{Binding TitleBarVM}"
+                          Grid.Row="0" HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"/>
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0,177*"/>
-                <ColumnDefinition Width="0,823*"/>
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0,177*"/>
+                    <ColumnDefinition Width="0,823*"/>
+                </Grid.ColumnDefinitions>
 
-            <ContentPresenter Content="{Binding MenuVM}"
+                <ContentPresenter Content="{Binding MenuVM}"
                           Grid.Column="0"/>
-            <ContentPresenter Content="{Binding WorkspaceVM}"
+                <ContentPresenter Content="{Binding WorkspaceVM}"
                           Grid.Column="1"/>
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </Window>

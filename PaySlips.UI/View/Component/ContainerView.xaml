@@ -7,18 +7,41 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border>
+        <Border BorderThickness="4" CornerRadius="6" 
+                BorderBrush="#005FA8">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Label Content="{Binding Title}" Grid.Row="0"/>
+                <Border BorderThickness="0"  CornerRadius="6,6,0,0" Margin="-2"  
+                        BorderBrush="#005FA8" Background="#005FA8">
+                    <StackPanel  Grid.Row="0">
+                        <Label Content="{Binding Title}" 
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"
+                       Foreground="White"
+                       FontSize="22"
+                       HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center" >
+                        </Label>
+                    </StackPanel>
+                </Border>
 
-                <WrapPanel Grid.Row="1">
-                    <ContentPresenter Content="{Binding Items}"/>
-                </WrapPanel> 
+
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Auto"
+                              Grid.Row="1" Margin="3" 
+                              Style="{StaticResource BeautifulScrollViewerStyle}">
+                    <ItemsControl ItemsSource="{Binding Items}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
             </Grid>
         </Border>
     </Grid>

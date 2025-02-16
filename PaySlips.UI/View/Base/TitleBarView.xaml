@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:PaySlips.UI.View.Base"
              xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
              MouseDown="TitleBar_MouseDown"
-             mc:Ignorable="d" 
-             d:DesignHeight="53" d:DesignWidth="1920">
-    
-    
-    <Grid>
+             mc:Ignorable="d"  BorderThickness="0" BorderBrush="Transparent"
+             Height="Auto" d:DesignWidth="1920">
+
+
+    <Grid Background="#003366">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="Auto"/>
@@ -19,35 +19,44 @@
         <!-- Заголовок окна -->
         <TextBlock Text="{Binding Title}"
                VerticalAlignment="Center"
-               Margin="10,0,0,0"
-               Foreground="Black"
-               FontSize="14"
+               Margin="20,0,0,0"
+               Foreground="#9E9E9E"
+               FontSize="20"
                shell:WindowChrome.IsHitTestVisibleInChrome="True" />
 
         <!-- Кнопки управления окном -->
-        <StackPanel Orientation="Horizontal" Grid.Column="1">
-            <Button Content="—"
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="0, 0, 10, 0">
+            <Button 
               Command="{Binding MinimizeCommand}"
               Width="40" Height="40"
               Background="Transparent"
-              Foreground="Black"
-              shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+              Foreground="White"
+              BorderThickness="0"
+              shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                <Image Source="{Binding Minimize}" Stretch="Uniform" Margin="10"/>
+            </Button>
 
 
-            <Button Content="□"
+            <Button
               Command="{Binding MaximizeCommand}"
               Width="40" Height="40"
               Background="Transparent"
-              Foreground="Black"
-              shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+              Foreground="White"
+              BorderThickness="0"
+              shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                <Image Source="{Binding Expand}" Stretch="Uniform" Margin="10"/>
+            </Button>
 
 
-            <Button Content="X"
+            <Button
               Command="{Binding CloseCommand}"
+              BorderThickness="0"
               Width="40" Height="40"
               Background="Transparent"
-              Foreground="Black"
-              shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+              Foreground="White"
+              shell:WindowChrome.IsHitTestVisibleInChrome="True">
+                <Image Source="{Binding Close}" Stretch="Uniform"/>
+            </Button>
 
 
         </StackPanel>

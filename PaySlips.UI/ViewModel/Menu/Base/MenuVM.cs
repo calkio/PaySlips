@@ -1,7 +1,11 @@
 ﻿using PaySlips.UI.Infastructure.Command;
 using PaySlips.UI.ViewModel.Base;
 using PaySlips.UI.ViewModel.Component;
+using System.Collections.ObjectModel;
+using System.Net.Http.Headers;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace PaySlips.UI.ViewModel.Menu.Base
 {
@@ -15,111 +19,38 @@ namespace PaySlips.UI.ViewModel.Menu.Base
 
         #region СВОЙСТВА
 
-        private string _firstLabel = "Hello world1";
-        public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
+        public BitmapImage Source { get; } = new BitmapImage(new Uri(@"pack://application:,,,/Media/Img/STU.png"));
 
-        #endregion
+        private ObservableCollection<MenuItem> _menuItems;
+        public ObservableCollection<MenuItem> MenuItems { get => _menuItems; set => Set(ref _menuItems, value); }
 
-        #region КОМАНДЫ
-
-        #region Показать главное окно
-
-        public ICommand ShowMainView
-        {
-            get
-            {
-                return new RelayCommand(
-                    (_) => ShowMainViewImpl(),
-                    (_) => CanShow());
+        private MenuItem _selectedMenuItem;
+        public MenuItem SelectedMenuItem 
+        { 
+            get => _selectedMenuItem;
+            set
+            { 
+                Set(ref _selectedMenuItem, value); 
+                _mvvm.WorkspaceVM = value.VM;
             }
         }
-        private void ShowMainViewImpl()
-        {
-            _mvvm.WorkspaceVM = _mvvm.WorkspaceMainVM;
-        }
 
         #endregion
 
-        #region Показать окно расчетных листов
-
-        public ICommand ShowPayslipsView
-        {
-            get
-            {
-                return new RelayCommand(
-                    (_) => ShowPayslipsViewImpl(),
-                    (_) => CanShow());
-            }
-        }
-        private void ShowPayslipsViewImpl()
-        {
-            _mvvm.WorkspaceVM = _mvvm.PayslipsVM;
-        }
-
-        #endregion
-
-        #region Показать окно архивов
-
-        public ICommand ShowArchiveView
-        {
-            get
-            {
-                return new RelayCommand(
-                    (_) => ShowArchiveViewImpl(),
-                    (_) => CanShow());
-            }
-        }
-        private void ShowArchiveViewImpl()
-        {
-            _mvvm.WorkspaceVM = _mvvm.ArchiveVM;
-        }
-
-        #endregion
-
-        #region Показать окно шаблонов
-
-        public ICommand ShowTemplatesView
-        {
-            get
-            {
-                return new RelayCommand(
-                    (_) => ShowTemplatesViewImpl(),
-                    (_) => CanShow());
-            }
-        }
-        private void ShowTemplatesViewImpl()
-        {
-            _mvvm.WorkspaceVM = _mvvm.TemplatesVM;
-        }
-
-        #endregion
-
-        #region Показать окно справки
-
-        public ICommand ShowReferenceView
-        {
-            get
-            {
-                return new RelayCommand(
-                    (_) => ShowReferenceViewImpl(),
-                    (_) => CanShow());
-            }
-        }
-        private void ShowReferenceViewImpl()
-        {
-            _mvvm.WorkspaceVM = _mvvm.ReferenceVM;
-        }
-
-        #endregion
-
-        private bool CanShow() => true;
-
-        #endregion
 
 
         public MenuVM(MainVM mvvm)
         {
             _mvvm = mvvm;
+            MenuItems = new ObservableCollection<MenuItem>
+            {
+                new MenuItem { Title = "Главная", VM = _mvvm.WorkspaceMainVM },
+                new MenuItem { Title = "Расчетные листы", VM = _mvvm.PayslipsVM },
+                new MenuItem { Title = "Архив", VM = _mvvm.ArchiveVM},
+                new MenuItem { Title = "Шаблоны", VM = _mvvm.TemplatesVM },
+                new MenuItem { Title = "Справка", VM = _mvvm.ReferenceVM }
+            };
+
         }
     }
 
