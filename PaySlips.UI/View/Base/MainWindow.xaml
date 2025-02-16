@@ -80,6 +80,12 @@
             <viewComponent:ContainerView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vmComponent:SearchLineVM}">
+            <viewComponent:SearchLineView/>
+        </DataTemplate>
+        
+        
+
     </Window.Resources>
 
     <Grid>
