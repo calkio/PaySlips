@@ -34,12 +34,13 @@
             <ContentPresenter Grid.Row="1"
                 Content="{Binding LastPayslips}"/>
 
-            <StackPanel Orientation="Horizontal" Grid.Row="3">
-                <ContentPresenter
+            <DockPanel Grid.Row="3">
+                <ContentPresenter DockPanel.Dock="Left"
                     Content="{Binding UnallocatedHours}"/>
-                <ContentPresenter
-                    Content="{Binding Trash}"/>
-            </StackPanel>
+                <ContentPresenter DockPanel.Dock="Right"
+                                  Margin="20,30,0,0"
+                                  Content="{Binding Trash}"/>
+            </DockPanel>
         </Grid>
     </Grid>
 </UserControl>

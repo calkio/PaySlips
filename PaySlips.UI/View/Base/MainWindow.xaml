@@ -82,6 +82,10 @@
             <viewComponent:ContainerView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vmComponent:TrashButtonVM}">
+            <viewComponent:TrashView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Border CornerRadius="8" BorderThickness="2" BorderBrush="#003366">

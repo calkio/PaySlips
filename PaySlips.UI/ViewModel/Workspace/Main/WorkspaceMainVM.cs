@@ -19,8 +19,14 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
         private string _firstLabel = "Hello world1";
         public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
 
-        private BaseVM _container;
-        public BaseVM ContainerVM { get => _container; set => Set(ref _container, value); }
+        private BaseVM _lastPayslips;
+        public BaseVM LastPayslips { get => _lastPayslips; set => Set(ref _lastPayslips, value); }
+
+        private BaseVM _unallocatedHours;
+        public BaseVM UnallocatedHours { get => _unallocatedHours; set => Set(ref _unallocatedHours, value); }
+
+        private BaseVM _trash;
+        public BaseVM Trash { get => _trash; set => Set(ref _trash, value); }
 
         #endregion
 
@@ -47,12 +53,17 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
         public WorkspaceMainVM(MainVM mvvm)
         {
             _mvvm = mvvm;
+            Trash = _mvvm.TrashButtonVM;
             ObservableCollection<BaseVM> buttons = new ObservableCollection<BaseVM>();
             for (int i = 0; i < 150; i++)
             {
                 buttons.Add(new FileButtonVM(_mvvm));
             }
-            ContainerVM = new ContainerVM("Кнопки", buttons, new FileButtonVM(_mvvm));
+            LastPayslips = new ContainerVM("Последние РЛ", buttons);
+
+            ObservableCollection<BaseVM> hours = new ObservableCollection<BaseVM>();
+            hours.Add(new FileButtonVM(_mvvm));
+            UnallocatedHours = new ContainerVM("Нераспределенные часы", hours);
         }
     }
 
