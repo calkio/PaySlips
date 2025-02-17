@@ -41,6 +41,8 @@
     <Style x:Key="BeautifulScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="5"/>
         <Setter Property="Template">
@@ -60,7 +62,7 @@
 
                             <!-- Основной контент -->
                             <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
-                                                Grid.Column="0"/>
+                                                Grid.Column="0" Margin="-6,-4"/>
 
                             <!-- Вертикальный ScrollBar -->
                             <ScrollBar x:Name="PART_VerticalScrollBar"

@@ -7,6 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ContentPresenter Content="{Binding ContainerVM}" Margin="20"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.034*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.0526*"/>
+            <ColumnDefinition Width="0.5656*"/>
+            <ColumnDefinition Width="0.0526*"/>
+            <ColumnDefinition Width="0.308*"/>
+            <ColumnDefinition Width="0.0285*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.033*"/>
+                <RowDefinition Height="0.695*"/>
+                <RowDefinition Height="0.031*"/>
+                <RowDefinition Height="0.209*"/>
+                <RowDefinition Height="0.03*"/>
+            </Grid.RowDefinitions>
+            
+            <ContentPresenter Grid.Row="1"
+                Content="{Binding ContainerVM}"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3">
+                <ContentPresenter
+                    Content="{Binding ContainerVM}"/>
+                <ContentPresenter
+                    Content="{Binding ContainerVM}"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

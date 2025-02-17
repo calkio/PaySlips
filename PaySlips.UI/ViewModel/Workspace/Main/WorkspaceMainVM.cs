@@ -52,7 +52,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
             {
                 buttons.Add(new FileButtonVM(_mvvm));
             }
-            ContainerVM = new ContainerVM("Кнопки", buttons);
+            ContainerVM = new ContainerVM("Кнопки", buttons, new FileButtonVM(_mvvm));
         }
     }
 
