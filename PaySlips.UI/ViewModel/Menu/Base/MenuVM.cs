@@ -1,10 +1,5 @@
-﻿using PaySlips.UI.Infastructure.Command;
-using PaySlips.UI.ViewModel.Base;
-using PaySlips.UI.ViewModel.Component;
+﻿using PaySlips.UI.ViewModel.Base;
 using System.Collections.ObjectModel;
-using System.Net.Http.Headers;
-using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace PaySlips.UI.ViewModel.Menu.Base
@@ -45,7 +40,7 @@ namespace PaySlips.UI.ViewModel.Menu.Base
             MenuItems = new ObservableCollection<MenuItem>
             {
                 new MenuItem { Title = "Главная", VM = _mvvm.WorkspaceMainVM },
-                new MenuItem { Title = "Расчетные листы", VM = _mvvm.PayslipsVM },
+                new MenuItem { Title = "Расчетные\nлисты", VM = _mvvm.PayslipsVM },
                 new MenuItem { Title = "Архив", VM = _mvvm.ArchiveVM},
                 new MenuItem { Title = "Шаблоны", VM = _mvvm.TemplatesVM },
                 new MenuItem { Title = "Справка", VM = _mvvm.ReferenceVM }

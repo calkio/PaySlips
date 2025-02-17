@@ -1,4 +1,5 @@
 ﻿using PaySlips.UI.ViewModel.Base;
+using PaySlips.UI.ViewModel.Component;
 using PaySlips.UI.ViewModel.Menu.Base;
 using PaySlips.UI.ViewModel.Workspace.Archive;
 using PaySlips.UI.ViewModel.Workspace.Main;
@@ -46,6 +47,9 @@ namespace PaySlips.UI.ViewModel
         private BaseVM _trashVM;
         public BaseVM TrashVM { get => _trashVM; set => Set(ref _trashVM, value); }
 
+        private TrashButtonVM _trashButtonVM;
+        public TrashButtonVM TrashButtonVM { get => _trashButtonVM; set => Set(ref _trashButtonVM, value); }
+
         #endregion
 
 
@@ -53,6 +57,7 @@ namespace PaySlips.UI.ViewModel
 
         public MainVM()
         {
+            TrashButtonVM = new TrashButtonVM(this);
             TitleBarVM = new TitleBarVM(this);
             ArchiveVM = new ArchiveVM(this);
             WorkspaceMainVM = new WorkspaceMainVM(this);

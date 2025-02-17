@@ -14,6 +14,7 @@
     <None Remove="Media\img\folder.png" />
     <None Remove="Media\img\Minimize.png" />
     <None Remove="Media\img\STU.png" />
+    <None Remove="Media\img\TrashFocus.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +35,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\img\STU.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\TrashClick.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\Trash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\TrashFocus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

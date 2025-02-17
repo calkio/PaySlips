@@ -10,23 +10,25 @@
         <Grid Background="#005FA8">
             <!-- Само меню -->
             <Border BorderThickness="0" CornerRadius="8">
-                <ListBox ItemsSource="{Binding MenuItems}"
-                         SelectedItem="{Binding SelectedMenuItem}"
-                         ItemContainerStyle="{StaticResource SideMenuItemStyle}"
-                         BorderThickness="0"
-                         Margin="0,20,-10,8"
-                         BorderBrush="Transparent" 
-                         Background="Transparent"
-                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <!-- Шаблон вывода текста внутри пункта -->
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Title}" 
-                       FontSize="35" 
-                       VerticalAlignment="Center"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                <ScrollViewer Style="{StaticResource BeautifulScrollViewerStyle}">
+                    <ListBox ItemsSource="{Binding MenuItems}"
+                             SelectedItem="{Binding SelectedMenuItem}"
+                             ItemContainerStyle="{StaticResource SideMenuItemStyle}"
+                             BorderThickness="0"
+                             Margin="0,20,-10,8"
+                             BorderBrush="Transparent" 
+                             Background="Transparent"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <!-- Шаблон вывода текста внутри пункта -->
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}" 
+                           FontSize="35" 
+                           VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
             </Border>
 
             <Image Source="{Binding Source}"
