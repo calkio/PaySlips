@@ -23,7 +23,7 @@
         HorizontalContentAlignment="Left"
         Style="{StaticResource ButtonFilter}">
                 <StackPanel Orientation="Horizontal">
-                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}">Название</Label>
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}"  Margin="9,0,0,0">Название</Label>
                     <Image Source="/Media/img/TitleButton.png" VerticalAlignment="Center" Height="30" Margin="19,0,0,0"/>
                 </StackPanel>
             </Button>
