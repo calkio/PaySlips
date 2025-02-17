@@ -18,8 +18,9 @@
             <ColumnDefinition Width="0.308*"/>
             <ColumnDefinition Width="0.0285*"/>
         </Grid.ColumnDefinitions>
-        
-        
+
+        <ContentPresenter Grid.Row="1" Grid.Column="1"
+                          Content="{Binding PayslipsCreatorVM}"/>
 
         <Grid Grid.Row="1" Grid.Column="3">
             <Grid.RowDefinitions>
@@ -31,13 +32,13 @@
             </Grid.RowDefinitions>
             
             <ContentPresenter Grid.Row="1"
-                Content="{Binding ContainerVM}"/>
+                Content="{Binding LastPayslips}"/>
 
             <StackPanel Orientation="Horizontal" Grid.Row="3">
                 <ContentPresenter
-                    Content="{Binding ContainerVM}"/>
+                    Content="{Binding UnallocatedHours}"/>
                 <ContentPresenter
-                    Content="{Binding ContainerVM}"/>
+                    Content="{Binding Trash}"/>
             </StackPanel>
         </Grid>
     </Grid>
