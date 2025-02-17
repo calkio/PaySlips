@@ -18,6 +18,8 @@
     <None Remove="Media\img\search_directory.png" />
     <None Remove="Media\img\STU.png" />
     <None Remove="Media\img\TitleButton.png" />
+    <None Remove="Media\img\Trash.png" />
+    <None Remove="Media\img\TrashClick.png" />
     <None Remove="Media\img\TrashFocus.png" />
   </ItemGroup>
 
@@ -54,6 +56,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\img\STU.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\Trash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\TrashClick.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\TrashFocus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
