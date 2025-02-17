@@ -7,13 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1531">
     <Grid>
-        <Grid Margin="30,30,30,678">
+        <Grid Margin="30,30,30,250">
 
             <ContentPresenter Content="{Binding Search}" Margin="430,10,429,0"/>
             <ContentPresenter Content="{Binding DirectoryVM}" Margin="10,10,726,0"/>
             <ContentPresenter Content="{Binding TitleButtonVM}" Margin="670,10,66,10"/>
             <ContentPresenter Content="{Binding DateButtonVM}" Margin="877,0,-141,10"/>
-            <ContentPresenter Content="{Binding FileButtonArchiveView}" Margin="378,-112,163,112"/>
+            <ContentPresenter Content="{Binding FileButtonArchiveVM}" Margin="471,0,429,512"/>
         </Grid>
     </Grid>
 </UserControl>

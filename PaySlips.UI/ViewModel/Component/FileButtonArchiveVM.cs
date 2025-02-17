@@ -19,7 +19,7 @@ namespace PaySlips.UI.ViewModel.Component
 
         #region СВОЙСТВА
 
-        private string _firstLabel = "Hello world1";
+        private string _firstLabel = "24/25_2 Семестр";
         public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
 
         #endregion
