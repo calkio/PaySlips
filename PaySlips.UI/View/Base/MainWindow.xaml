@@ -86,7 +86,17 @@
             <viewComponent:SearchLineView/>
         </DataTemplate>
         
-        
+        <DataTemplate DataType="{x:Type vmComponent:DirectoryVM}">
+            <viewComponent:DirectoryView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmComponent:TitleButtonVM}">
+            <viewComponent:TitleButtonView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmComponent:DateButtonVM}">
+            <viewComponent:DateButtonView/>
+        </DataTemplate>
 
         <DataTemplate DataType="{x:Type vmComponent:TrashButtonVM}">
             <viewComponent:TrashView/>

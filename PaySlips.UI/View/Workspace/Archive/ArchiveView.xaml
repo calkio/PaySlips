@@ -5,9 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PaySlips.UI.View.Workspace.Archive"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1080" d:DesignWidth="1531">
     <Grid>
-        <ContentPresenter Content="{Binding Search}"/>
-        <Label Content="Archive"/>
+        <Grid Margin="30,30,30,678">
+
+            <ContentPresenter Content="{Binding Search}" Margin="430,10,429,0"/>
+            <ContentPresenter Content="{Binding DirectoryVM}" Margin="10,10,726,0"/>
+            <ContentPresenter Content="{Binding TitleButtonVM}" Margin="670,10,66,10"/>
+            <ContentPresenter Content="{Binding DateButtonVM}" Margin="877,0,-141,10"/>
+        </Grid>
     </Grid>
 </UserControl>

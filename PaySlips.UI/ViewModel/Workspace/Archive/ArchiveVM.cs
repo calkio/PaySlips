@@ -18,6 +18,18 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
         private BaseVM _search;
         public BaseVM Search { get => _search; set => Set(ref _search, value); }
 
+        private BaseVM _directoryVM;
+        public BaseVM DirectoryVM { get => _directoryVM; set => Set(ref _directoryVM, value); }
+
+        private BaseVM _titleButtonVM;
+        public BaseVM TitleButtonVM { get => _titleButtonVM; set => Set(ref _titleButtonVM, value); }
+
+        private BaseVM _dateButtonVM;
+        public BaseVM DateButtonVM { get => _dateButtonVM; set => Set(ref _dateButtonVM, value); }
+
+
+
+
         #endregion
 
         #region КОМАНДЫ
@@ -43,7 +55,11 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
         public ArchiveVM(MainVM mvvm)
         {
             _mvvm = mvvm;
+            DirectoryVM = new DirectoryVM(mvvm);
             Search = new SearchLineVM(mvvm);
+            TitleButtonVM = new TitleButtonVM(mvvm);
+            DateButtonVM = new DateButtonVM(mvvm);
+
 
 
         }
