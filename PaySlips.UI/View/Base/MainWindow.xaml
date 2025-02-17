@@ -86,7 +86,10 @@
             <viewComponent:SearchLineView/>
         </DataTemplate>
         
-        
+        <DataTemplate DataType="{x:Type vmComponent:DirectoryVM}">
+            <viewComponent:DirectoryView/>
+        </DataTemplate>
+
 
     </Window.Resources>
 

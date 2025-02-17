@@ -11,7 +11,9 @@
   <ItemGroup>
     <None Remove="Media\img\Close.png" />
     <None Remove="Media\img\Expand.png" />
+    <None Remove="Media\img\file_directory.png" />
     <None Remove="Media\img\folder.png" />
+    <None Remove="Media\img\Line_directory.png" />
     <None Remove="Media\img\Minimize.png" />
     <None Remove="Media\img\STU.png" />
   </ItemGroup>
@@ -27,7 +29,13 @@
     <Resource Include="Media\img\Expand.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Media\img\file_directory.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Media\img\folder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\Line_directory.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\img\Minimize.png">
