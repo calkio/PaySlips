@@ -2,6 +2,7 @@
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Requests;
+using PaySlips.Core.Model.Lesson;
 using PaySlips.Core.Model.Parents;
 using PaySlips.Core.Model.Teacher;
 
@@ -10,6 +11,7 @@ namespace ServiceTeacher.Parsers
     internal class FilledLesson
     {
         private readonly string _pathFile;
+        private readonly IEnumerable<Group> _groups;
 
         private readonly int START_ROW = 8;
         private readonly int START_SHEET_INDEX = 1;
@@ -24,6 +26,7 @@ namespace ServiceTeacher.Parsers
 
         public FilledLesson(FilledTeacherRequest request)
         {
+            _groups = request.Groups;
             _pathFile = request.PathFileScheduler ?? throw new ArgumentNullException(nameof(request.PathFileScheduler));
         }
 
@@ -76,9 +79,9 @@ namespace ServiceTeacher.Parsers
                     {
                         continue;
                     }
-                    (string? evenSubject, string? oddSubject) = ParserSubject(row);
+                    (Lesson evenSubject, Lesson oddSubject) = ParserSubject(row, startTime, endTime);
 
-                    if (string.IsNullOrEmpty(evenSubject) && string.IsNullOrEmpty(oddSubject))
+                    if (evenSubject == null && oddSubject == null)
                     {
                         continue;
                     }
@@ -199,13 +202,63 @@ namespace ServiceTeacher.Parsers
 
         #region Subject
 
-        private (string? evenSubject, string? oddSubject) ParserSubject(IRow row)
+        private (Lesson evenSubject, Lesson oddSubject) ParserSubject(IRow row, TimeSpan start, TimeSpan end)
         {
-            string? evenSubject = row.GetCell(CELL_INDEX_EVEN_SUBJECT)?.ToString()?.Trim();
-            string? oddSubject = row.GetCell(CELL_INDEX_ODD_SUBJECT)?.ToString()?.Trim();
+            string? evenSubjectStr = row.GetCell(CELL_INDEX_EVEN_SUBJECT)?.ToString()?.Trim();
+            Lesson evenSubject = GetLesson(evenSubjectStr, start, end);
+
+            string? oddSubjectStr = row.GetCell(CELL_INDEX_ODD_SUBJECT)?.ToString()?.Trim();
+            Lesson oddSubject = GetLesson(oddSubjectStr, start, end);
 
             return (evenSubject, oddSubject);
         }
+
+        private Lesson GetLesson(string? subjectStr, TimeSpan start, TimeSpan end)
+        {
+            if (string.IsNullOrEmpty(subjectStr))
+            {
+                return null;
+            }
+
+            (string onliSubjectStr, string groupStr) = SplitStr(subjectStr);
+
+            Group? group = GetGroup(groupStr);
+            TimeSpan duration = end - start;
+            Discipline discipline = new Discipline() { Name = onliSubjectStr };
+
+            Lesson lesson = new Lesson()
+            {
+                Group = group,
+                Duration = duration,
+                Discipline = discipline
+            };
+            return lesson;
+        }
+
+        private (string onliSubjectStr, string groupStr) SplitStr(string subjectStr)
+        {
+            string[] lines = subjectStr.Split('\n');
+
+            string onliSubjectStr = lines[0];
+
+            string groupStr = lines[1];
+            // Если в строке есть "_" (подгруппа), то берём только часть до него
+            groupStr = groupStr.Split('_')[0];
+
+            return (onliSubjectStr, groupStr);
+        }
+
+        private Group? GetGroup(string groupStr)
+        {
+            if (string.IsNullOrEmpty(groupStr))
+            {
+                return _groups.FirstOrDefault(g => g.Name == groupStr);
+            }
+
+            throw new ArgumentNullException(groupStr);
+        }
+
+
 
         #endregion
 

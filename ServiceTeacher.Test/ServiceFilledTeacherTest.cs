@@ -2,6 +2,7 @@
 using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Requests;
 using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Responses;
 using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Service;
+using PaySlips.Core.Model.Lesson;
 using PaySlips.Core.Model.Parents;
 
 namespace ServiceTeacher.Test
@@ -12,7 +13,7 @@ namespace ServiceTeacher.Test
         public async Task GetAllFilledTeacher_ValidRequest_ReturnsExpectedResponse()
         {
             // Arrange
-            var request = new FilledTeacherRequest("dummy.xlsx");
+            var request = new FilledTeacherRequest("dummy.xlsx", new List<Group>());
             var expectedResponse = new FilledTeacherResponses(new List<Teacher>
             {
                 new Teacher { Secondname = "Петров", Firstname = "Петр", Surname = "Петрович" }
@@ -37,7 +38,7 @@ namespace ServiceTeacher.Test
         public async Task GetAllFilledTeacher_UnderlyingServiceThrows_ExceptionPropagates()
         {
             // Arrange
-            var request = new FilledTeacherRequest("dummy.xlsx");
+            var request = new FilledTeacherRequest("dummy.xlsx", new List<Group>());
             var exception = new InvalidOperationException("Some error occurred in filled teacher");
             var mockServiceTeacher = new Mock<IServiceTeacher>();
             mockServiceTeacher
@@ -80,7 +81,7 @@ namespace ServiceTeacher.Test
         public async Task GetAllFilledTeacher_CalledMultipleTimes_VerifyInvocationCount()
         {
             // Arrange
-            var request = new FilledTeacherRequest("dummy.xlsx");
+            var request = new FilledTeacherRequest("dummy.xlsx", new List<Group>());
             var expectedResponse = new FilledTeacherResponses(new List<Teacher>
             {
                 new Teacher { Secondname = "Петров", Firstname = "Петр", Surname = "Петрович" }

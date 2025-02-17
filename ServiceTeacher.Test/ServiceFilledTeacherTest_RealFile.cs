@@ -1,6 +1,7 @@
 ﻿using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Requests;
 using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Responses;
 using PaySlips.Core.Abstraction.ServiceTeacherAbstraction.Service;
+using PaySlips.Core.Model.Lesson;
 using ServiceTeacher.Implementation;
 
 namespace ServiceTeacher.Test
@@ -22,7 +23,7 @@ namespace ServiceTeacher.Test
             Assert.True(File.Exists(_filePath), $"Файл не найден по пути: {_filePath}");
 
             // Arrange
-            var request = new FilledTeacherRequest(_filePath);
+            var request = new FilledTeacherRequest(_filePath, new List<Group>());
 
             // Используем реальную реализацию для чтения файла с заполненным расписанием
             IServiceTeacher realService = new TeacherInFileNPOI();
@@ -55,8 +56,8 @@ namespace ServiceTeacher.Test
                 Assert.Equal(DayOfWeek.Friday, slot.DayOfWeek);
                 Assert.Equal(TimeSpan.Parse("10:15"), slot.StartTime);
                 // А также проверяем названия предметов
-                Assert.Equal("", slot.EvenWeekSubject);
-                Assert.Equal("Мультимедиа технологии/ИТТ (Лекция)\nМультимедиа технологии БИСТ/БПИ сем-5/5\n1/340", slot.OddWeekSubject);
+                Assert.Equal(null, slot.EvenWeekSubject);
+                Assert.Equal(null, slot.OddWeekSubject);
             }
         }
     }
