@@ -15,7 +15,9 @@
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
         <Border Background="#E0E0E0" Grid.ColumnSpan="3" CornerRadius="4" BorderThickness="1" BorderBrush="#005FA8">
-
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="5" Direction="275" Color="Black" Opacity="0.3"/>
+            </Border.Effect>
         </Border>
         <TextBox Grid.Column="3" 
                  Background="Transparent" 
