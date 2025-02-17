@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PaySlips.Core\PaySlips.Core.csproj" />
+  </ItemGroup>
+
 </Project>
