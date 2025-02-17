@@ -14,13 +14,19 @@
 
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Border Background="#E0E0E0" Grid.ColumnSpan="3" CornerRadius="4" BorderThickness="1" BorderBrush="#005FA8">
+            <Border Background="#E0E0E0" Grid.ColumnSpan="3" CornerRadius="4" BorderThickness="1" BorderBrush="Transparent">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="5" Direction="275" Color="Black" Opacity="0.3"/>
                 </Border.Effect>
             </Border>
-            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}">Название</Label>
-            <Image Source="/Media/img/TitleButton.png" VerticalAlignment="Center" Height="30" Grid.Column="1"/>
+            <Button Grid.ColumnSpan="2"
+        HorizontalContentAlignment="Left"
+        Style="{StaticResource ButtonFilter}">
+                <StackPanel Orientation="Horizontal">
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}">Название</Label>
+                    <Image Source="/Media/img/TitleButton.png" VerticalAlignment="Center" Height="30" Margin="19,0,0,0"/>
+                </StackPanel>
+            </Button>
         </Grid>
 
 

@@ -37,6 +37,59 @@
     </Style>
     <!--#endregion-->
 
+
+    <!--#region КНОПКИ ФИЛЬТРОВ -->
+    <Style x:Key="ButtonFilter" TargetType="Button">
+
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Background" Value="#E0E0E0"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" Padding="3" Background="{TemplateBinding Property=Background}">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="6" ShadowDepth="5" Direction="289" Color="Gray" Opacity="0.02"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#4682B4"/>
+                <Setter Property="BorderBrush" Value="#00B3FC"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#C3FFDC"/>
+                <Setter Property="BorderBrush" Value="#C3FFDC"/>
+                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+
+                <!-- Эффекты проваливания -->
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter Property="Margin" Value="1,1,1,1"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect BlurRadius="6" ShadowDepth="15" Direction="290" Color="Gray" Opacity="0.05"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+
     <!--#region Скрол -->
     <Style x:Key="BeautifulScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="Background" Value="Transparent"/>
