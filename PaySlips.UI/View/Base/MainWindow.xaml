@@ -110,6 +110,19 @@
             <viewComponent:DeleteButtonView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vmComponent:DeleteAllButtonVM}">
+            <viewComponent:DeleteAllButtonView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmComponent:DownloadButtonVM}">
+            <viewComponent:DownloadButtonView/>
+        </DataTemplate>
+        
+
+        <DataTemplate DataType="{x:Type vmComponent:RecoverButtonVM}">
+            <viewComponent:RecoverButtonView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Border CornerRadius="8" BorderThickness="2" BorderBrush="#003366">

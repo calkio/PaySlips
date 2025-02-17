@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="PaySlips.UI.View.Component.DeleteButtonView"
+﻿<UserControl x:Class="PaySlips.UI.View.Component.RecoverButtonView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PaySlips.UI.View.Component"
-             mc:Ignorable="d" Height="72" Width="259" 
->
+             mc:Ignorable="d" 
+                     Height="72" Width="259">
     <Grid>
-        <Button Style="{StaticResource DeleteButton}" Content="Удалить"/>
+        <Button Style="{StaticResource DeleteButton}" Content="Восстановить"/>
     </Grid>
 </UserControl>
