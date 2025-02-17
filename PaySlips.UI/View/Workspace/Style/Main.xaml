@@ -195,7 +195,14 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Setter Property="FontFamily" Value="Inter"/>
+        <Setter Property="Foreground" Value="#005FA8"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Padding" Value="1,0,0,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
     <!--#endregion-->
+
 
 </ResourceDictionary>

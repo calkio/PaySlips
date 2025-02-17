@@ -7,14 +7,14 @@
              mc:Ignorable="d">
 
 
-    <Grid Height="28" Width="255">
+    <Grid Height="40" Width="300">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="0.4*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        <Border Background="#E0E0E0" Grid.ColumnSpan="3" CornerRadius="4" BorderThickness="0.7" BorderBrush="#005FA8">
+        <Border Background="#E0E0E0" Grid.ColumnSpan="3" CornerRadius="4" BorderThickness="1" BorderBrush="#005FA8">
 
         </Border>
         <TextBox Grid.Column="3" 
@@ -24,6 +24,6 @@
                  VerticalAlignment="Center"
                  ></TextBox>
         <Image Source="/Media/img/file_directory.png" VerticalAlignment="Center"/>
-        <Image Source="/Media/img/Line_directory.png" Grid.Column="1" Height="20" VerticalAlignment="Center"/>
+        <Image Source="/Media/img/Line_directory.png" Grid.Column="1" Height="30" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>
