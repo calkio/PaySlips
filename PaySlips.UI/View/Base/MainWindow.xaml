@@ -105,6 +105,10 @@
         <DataTemplate DataType="{x:Type vmComponent:FileButtonArchiveVM}">
             <viewComponent:FileButtonArchiveView/>
         </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vmComponent:DeleteButtonVM}">
+            <viewComponent:DeleteButtonView/>
+        </DataTemplate>
 
     </Window.Resources>
 

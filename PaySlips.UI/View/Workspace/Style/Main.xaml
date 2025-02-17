@@ -90,6 +90,55 @@
     </Style>
     <!--#endregion-->
 
+
+    <!--#region КНОПКА УДАЛИТЬ -->
+    <Style x:Key="DeleteButton" TargetType="Button">
+
+        <!-- Толщина шрифта -->
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderThickness" Value="1,1,3,3"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="FontSize" Value="35"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Background" Value="#005FA8"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" Padding="3" BorderBrush="{TemplateBinding Property=BorderBrush}" BorderThickness="{TemplateBinding Property=BorderThickness}" Background="{TemplateBinding Property=Background}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ContentPresenter.Content>
+                                <TextBlock Text="{TemplateBinding Content}"
+                                       Foreground="White"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       FontWeight="{TemplateBinding FontWeight}">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect BlurRadius="5" ShadowDepth="0" Direction="270" Color="Black" Opacity="0.75"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </ContentPresenter.Content>
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#4682B4"/>
+                <Setter Property="BorderBrush" Value="#00B3FC"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#005FA8"/>
+                <Setter Property="BorderBrush" Value="#005FA8"/>
+                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+
     <!--#region Скрол -->
     <Style x:Key="BeautifulScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="Background" Value="Transparent"/>

@@ -8,7 +8,7 @@
     <Grid>
 
         <Button Grid.ColumnSpan="2"
-            HorizontalContentAlignment="Right"
+            HorizontalContentAlignment="Center"
             Style="{StaticResource SButton}">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Media/img/file_directory.png" Height="60"/>
