@@ -15,7 +15,9 @@
     <None Remove="Media\img\folder.png" />
     <None Remove="Media\img\Line_directory.png" />
     <None Remove="Media\img\Minimize.png" />
+    <None Remove="Media\img\search_directory.png" />
     <None Remove="Media\img\STU.png" />
+    <None Remove="Media\img\TitleButton.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +43,13 @@
     <Resource Include="Media\img\Minimize.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Media\img\search_directory.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Media\img\STU.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\TitleButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

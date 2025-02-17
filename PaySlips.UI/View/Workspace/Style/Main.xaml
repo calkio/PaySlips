@@ -204,5 +204,16 @@
     </Style>
     <!--#endregion-->
 
+    <!--#region Стиль для текста кнопок фильтрации-->
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Inter"/>
+        <Setter Property="Foreground" Value="#003366"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Padding" Value="1,0,0,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    <!--#endregion-->
+
 
 </ResourceDictionary>

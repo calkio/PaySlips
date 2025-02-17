@@ -7,11 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1531">
     <Grid>
-        <Grid Margin="30,30,30,759">
-            
-            <ContentPresenter Content="{Binding Search}"/>
-            <ContentPresenter Content="{Binding DirectoryVM}"/>
+        <Grid Margin="30,30,30,678">
+
+            <ContentPresenter Content="{Binding Search}" Margin="430,10,429,0"/>
+            <ContentPresenter Content="{Binding DirectoryVM}" Margin="10,10,726,0"/>
+            <ContentPresenter Content="{Binding TitleButtonVM}" Margin="670,10,66,10"/>
+            <ContentPresenter Content="{Binding DateButtonVM}" Margin="877,0,-141,10"/>
         </Grid>
-        <!--<Label Content="Archive" Margin="0,0,714,415" />-->
     </Grid>
 </UserControl>

@@ -90,6 +90,13 @@
             <viewComponent:DirectoryView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vmComponent:TitleButtonVM}">
+            <viewComponent:TitleButtonView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmComponent:DateButtonVM}">
+            <viewComponent:DateButtonView/>
+        </DataTemplate>
 
     </Window.Resources>
 
