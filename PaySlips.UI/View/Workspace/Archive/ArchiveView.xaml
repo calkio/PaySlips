@@ -13,6 +13,7 @@
             <ContentPresenter Content="{Binding DirectoryVM}" Margin="10,10,726,0"/>
             <ContentPresenter Content="{Binding TitleButtonVM}" Margin="670,10,66,10"/>
             <ContentPresenter Content="{Binding DateButtonVM}" Margin="877,0,-141,10"/>
+            <ContentPresenter Content="{Binding FileButtonArchiveView}" Margin="378,-112,163,112"/>
         </Grid>
     </Grid>
 </UserControl>

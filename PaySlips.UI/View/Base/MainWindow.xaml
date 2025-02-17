@@ -102,6 +102,10 @@
             <viewComponent:TrashView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vmComponent:FileButtonArchiveVM}">
+            <viewComponent:FileButtonArchiveView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Border CornerRadius="8" BorderThickness="2" BorderBrush="#003366">
