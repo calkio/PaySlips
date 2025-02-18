@@ -23,11 +23,8 @@
                     </StackPanel>
                 </Border>
 
-                <ContentPresenter Content="{Binding DirectoryVM}" Grid.Row="1"/>
                 <ContentPresenter Content="{Binding SearchLineVM}" Grid.Row="1"/>
-                <ContentPresenter Content="{Binding TitleButtonVM}" Grid.Row="1"/>
-                <ContentPresenter Content="{Binding DateButtonVM}" Grid.Row="1"/>
-
+              
                 <ScrollViewer Grid.Row="2" Margin="0" 
                               HorizontalContentAlignment="Center"
                               Style="{StaticResource BeautifulScrollViewerStyle}">
