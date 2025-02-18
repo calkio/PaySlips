@@ -1,6 +1,7 @@
 ﻿using PaySlips.UI.Infastructure.Command;
 using PaySlips.UI.ViewModel.Base;
 using PaySlips.UI.ViewModel.Component;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace PaySlips.UI.ViewModel.Workspace.Archive
@@ -42,6 +43,12 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
         private BaseVM _recoverButtonVM;
         public BaseVM RecoverButtonVM { get => _recoverButtonVM; set => Set(ref _recoverButtonVM, value); }
 
+        private BaseVM _containerVM;
+        public BaseVM ContainerVM { get => _containerVM; set => Set(ref _containerVM, value); }
+
+        private BaseVM _trash;
+        public BaseVM Trash { get => _trash; set => Set(ref _trash, value); }
+
 
 
         #endregion
@@ -68,7 +75,13 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
 
         public ArchiveVM(MainVM mvvm)
         {
+            ObservableCollection<BaseVM> buttons = new ObservableCollection<BaseVM>();
+            for (int i = 0; i < 150; i++)
+            {
+                buttons.Add(new FileButtonArchiveVM(_mvvm));
+            }
             _mvvm = mvvm;
+            Trash = _mvvm.TrashButtonVM;
             DirectoryVM = new DirectoryVM(mvvm);
             Search = new SearchLineVM(mvvm);
             TitleButtonVM = new TitleButtonVM(mvvm);
@@ -78,6 +91,8 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             DeleteAllButtonVM = new DeleteAllButtonVM(mvvm);
             DownloadButtonVM = new DownloadButtonVM(mvvm);
             RecoverButtonVM = new RecoverButtonVM(mvvm);
+
+            ContainerVM = new ContainerVM("Последние РЛ", buttons,DirectoryVM ,Search, TitleButtonVM,TitleButtonVM);
 
 
 
