@@ -20,4 +20,42 @@
             <ContentPresenter Content="{Binding RecoverButtonVM}" Margin="0,144,806,261"/>
         </Grid>
     </Grid>
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.034*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="3.9*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.0526*"/>
+
+            <ColumnDefinition Width="0.308*"/>
+            <ColumnDefinition Width="0.0285*"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentPresenter Grid.Row="2" Grid.Column="1"
+                      Content="{Binding PayslipsCreatorVM}"/>
+
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.033*"/>
+                <RowDefinition Height="0.695*"/>
+                <RowDefinition Height="0.031*"/>
+                <RowDefinition Height="0.209*"/>
+                <RowDefinition Height="0.03*"/>
+            </Grid.RowDefinitions>
+
+            <ContentPresenter Grid.Row="1"
+            Content="{Binding LastPayslips}"/>
+
+            <DockPanel Grid.Row="2">
+                <ContentPresenter DockPanel.Dock="Left"
+                Content="{Binding UnallocatedHours}"/>
+                <ContentPresenter DockPanel.Dock="Right"
+                              Margin="20,30,0,0"
+                              Content="{Binding Trash}"/>
+            </DockPanel>
+        </Grid>
+    </Grid>-->
 </UserControl>
