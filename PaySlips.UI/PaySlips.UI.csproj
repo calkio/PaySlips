@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Media\img\Close.png" />
+    <None Remove="Media\img\excel.png" />
     <None Remove="Media\img\Expand.png" />
     <None Remove="Media\img\file_directory.png" />
     <None Remove="Media\img\folder.png" />
@@ -24,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Media\img\excel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Media\img\file_directory.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

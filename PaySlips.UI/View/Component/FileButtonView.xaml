@@ -4,10 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PaySlips.UI.View.Component"
-             mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1531">
-    <Grid>
-        <Button Content="Кнопка" Style="{StaticResource SButton}" 
-                Height="100" Width="100" Margin="20"/>
+             mc:Ignorable="d">
+    <Grid HorizontalAlignment="Stretch" Margin="10">
+        <Button 
+            HorizontalContentAlignment="Stretch"
+            Style="{StaticResource SButton}">
+            <DockPanel HorizontalAlignment="Stretch">
+                <Image Source="/Media/img/excel.png" 
+                       Height="60"
+                       DockPanel.Dock="Left"/>
+                <Label VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Style="{StaticResource LabelStyle}" 
+                       Content="{Binding Name}"
+                       DockPanel.Dock="Right"/>
+            </DockPanel>
+        </Button>
     </Grid>
 </UserControl>

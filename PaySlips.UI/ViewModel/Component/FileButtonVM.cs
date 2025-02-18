@@ -19,8 +19,11 @@ namespace PaySlips.UI.ViewModel.Component
 
         #region СВОЙСТВА
 
-        private string _firstLabel = "Hello world1";
-        public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
+        private string _name;
+        public string Name { get => _name; set => Set(ref _name, value); }
+
+        private int _width = 100;
+        public int Width { get => _width; set => Set(ref _width, value); }
 
         #endregion
 
@@ -44,9 +47,9 @@ namespace PaySlips.UI.ViewModel.Component
         #endregion
 
 
-        public FileButtonVM(MainVM mvvm)
+        public FileButtonVM(string name)
         {
-            _mvvm = mvvm;
+            _name = name;
         }
     }
 
