@@ -37,6 +37,24 @@
     </Style>
     <!--#endregion-->
 
+    <!--#region Label -->
+    <Style x:Key="HLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="5" 
+                              ShadowDepth="0" 
+                              Direction="270" 
+                              Color="Black" 
+                              Opacity="0.75"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
 
     <!--#region КНОПКИ ФИЛЬТРОВ -->
     <Style x:Key="ButtonFilter" TargetType="Button">

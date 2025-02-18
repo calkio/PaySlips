@@ -19,14 +19,7 @@
                 <Border BorderThickness="0"  CornerRadius="6,6,0,0" Margin="-2"  
                         BorderBrush="#005FA8" Background="#005FA8">
                     <StackPanel  Grid.Row="0">
-                        <Label Content="{Binding Title}" 
-                       HorizontalAlignment="Stretch"
-                       VerticalAlignment="Stretch"
-                       Foreground="White"
-                       FontSize="22"
-                       HorizontalContentAlignment="Center"
-                       VerticalContentAlignment="Center" >
-                        </Label>
+                        <Label Content="{Binding Title}" Style="{StaticResource HLabel}"/>
                     </StackPanel>
                 </Border>
 
