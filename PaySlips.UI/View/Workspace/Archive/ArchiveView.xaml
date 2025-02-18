@@ -15,6 +15,9 @@
             <ContentPresenter Content="{Binding DateButtonVM}" Margin="877,0,-141,10"/>
             <ContentPresenter Content="{Binding FileButtonArchiveVM}" Margin="471,0,429,512"/>
             <ContentPresenter Content="{Binding DeleteButtonVM}" Margin="0,0,806,405"/>
+            <ContentPresenter Content="{Binding DeleteAllButtonVM}" Margin="806,10,0,395"/>
+            <ContentPresenter Content="{Binding DownloadButtonVM}" Margin="424,144,382,261"/>
+            <ContentPresenter Content="{Binding RecoverButtonVM}" Margin="0,144,806,261"/>
         </Grid>
     </Grid>
 </UserControl>

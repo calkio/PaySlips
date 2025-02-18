@@ -33,6 +33,14 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
         private BaseVM _deleteButtonVM;
         public BaseVM DeleteButtonVM { get => _deleteButtonVM; set => Set(ref _deleteButtonVM, value); }
 
+        private BaseVM _deleteAllButtonVM;
+        public BaseVM DeleteAllButtonVM { get => _deleteAllButtonVM; set => Set(ref _deleteAllButtonVM, value); }
+
+        private BaseVM _downloadButtonVM;
+        public BaseVM DownloadButtonVM { get => _downloadButtonVM; set => Set(ref _downloadButtonVM, value); }
+        
+        private BaseVM _recoverButtonVM;
+        public BaseVM RecoverButtonVM { get => _recoverButtonVM; set => Set(ref _recoverButtonVM, value); }
 
 
 
@@ -67,6 +75,9 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             DateButtonVM = new DateButtonVM(mvvm);
             FileButtonArchiveVM = new FileButtonArchiveVM(mvvm);
             DeleteButtonVM = new DeleteButtonVM(mvvm);
+            DeleteAllButtonVM = new DeleteAllButtonVM(mvvm);
+            DownloadButtonVM = new DownloadButtonVM(mvvm);
+            RecoverButtonVM = new RecoverButtonVM(mvvm);
 
 
 
