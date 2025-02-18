@@ -5,7 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PaySlips.UI.View.Workspace.Main"
              mc:Ignorable="d" 
+             
+             xmlns:viewWM="clr-namespace:PaySlips.UI.View.Workspace.Main"
+             xmlns:vmWM="clr-namespace:PaySlips.UI.ViewModel.Workspace.Main"
+             
              d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type vmWM:PayslipsCreatorVM}">
+            <viewWM:PayslipsCreatorView/>
+        </DataTemplate>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.034*"/>
@@ -24,17 +35,16 @@
 
         <Grid Grid.Row="1" Grid.Column="3">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.033*"/>
-                <RowDefinition Height="0.695*"/>
+                <RowDefinition Height="0.728*"/>
                 <RowDefinition Height="0.031*"/>
                 <RowDefinition Height="0.209*"/>
                 <RowDefinition Height="0.03*"/>
             </Grid.RowDefinitions>
             
-            <ContentPresenter Grid.Row="1"
+            <ContentPresenter Grid.Row="0"
                 Content="{Binding LastPayslips}"/>
 
-            <DockPanel Grid.Row="3">
+            <DockPanel Grid.Row="2">
                 <ContentPresenter DockPanel.Dock="Left"
                     Content="{Binding UnallocatedHours}"/>
                 <ContentPresenter DockPanel.Dock="Right"

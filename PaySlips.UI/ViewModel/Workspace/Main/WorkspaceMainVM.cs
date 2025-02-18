@@ -16,8 +16,8 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
 
         #region СВОЙСТВА
 
-        private string _firstLabel = "Hello world1";
-        public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
+        private BaseVM _payslipsCreatorVM;
+        public BaseVM PayslipsCreatorVM { get => _payslipsCreatorVM; set => Set(ref _payslipsCreatorVM, value); }
 
         private ContainerVM _lastPayslips;
         public ContainerVM LastPayslips { get => _lastPayslips; set => Set(ref _lastPayslips, value); }
@@ -53,6 +53,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
         public WorkspaceMainVM(MainVM mvvm)
         {
             _mvvm = mvvm;
+            PayslipsCreatorVM = new PayslipsCreatorVM(mvvm);
             Trash = _mvvm.TrashButtonVM;
             ObservableCollection<BaseVM> buttons = new ObservableCollection<BaseVM>();
             for (int i = 0; i < 150; i++)

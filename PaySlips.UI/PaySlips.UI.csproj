@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Media\img\BotPanel.png" />
     <None Remove="Media\img\Close.png" />
     <None Remove="Media\img\excel.png" />
     <None Remove="Media\img\Expand.png" />
@@ -19,12 +20,16 @@
     <None Remove="Media\img\search_directory.png" />
     <None Remove="Media\img\STU.png" />
     <None Remove="Media\img\TitleButton.png" />
+    <None Remove="Media\img\TopPanel.png" />
     <None Remove="Media\img\Trash.png" />
     <None Remove="Media\img\TrashClick.png" />
     <None Remove="Media\img\TrashFocus.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Media\img\BotPanel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Media\img\excel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -60,6 +65,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\img\STU.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\TopPanel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\img\Trash.png">
