@@ -123,6 +123,10 @@
             <viewComponent:RecoverButtonView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vmComponent:UpPanelVM}">
+            <viewComponent:UpPanelView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Border CornerRadius="8" BorderThickness="2" BorderBrush="#003366">

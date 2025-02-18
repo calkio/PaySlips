@@ -49,6 +49,8 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
         private BaseVM _trash;
         public BaseVM Trash { get => _trash; set => Set(ref _trash, value); }
 
+        private BaseVM _upPanelVM;
+        public BaseVM UpPanelVM { get => _upPanelVM; set => Set(ref _upPanelVM, value); }
 
 
         #endregion
@@ -91,8 +93,9 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             DeleteAllButtonVM = new DeleteAllButtonVM(mvvm);
             DownloadButtonVM = new DownloadButtonVM(mvvm);
             RecoverButtonVM = new RecoverButtonVM(mvvm);
+            UpPanelVM = new UpPanelVM(mvvm, Search, DirectoryVM, TitleButtonVM, DateButtonVM);
 
-            ContainerVM = new ContainerVM("Последние РЛ", buttons,DirectoryVM ,Search, TitleButtonVM,TitleButtonVM);
+            ContainerVM = new ContainerVM("Последние РЛ", buttons, UpPanelVM);
 
 
 

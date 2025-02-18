@@ -23,7 +23,7 @@
                     </StackPanel>
                 </Border>
 
-                <ContentPresenter Content="{Binding SearchLineVM}" Grid.Row="1"/>
+                <ContentPresenter Content="{Binding UpPanelVM}" Grid.Row="1"/>
               
                 <ScrollViewer Grid.Row="2" Margin="0" 
                               HorizontalContentAlignment="Center"

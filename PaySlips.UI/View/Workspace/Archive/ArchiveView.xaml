@@ -8,9 +8,9 @@
              d:DesignHeight="1080" d:DesignWidth="1531">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.05*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.05*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.02*"/>
@@ -36,13 +36,13 @@
 
         <ContentPresenter Content="{Binding ContainerVM}" Grid.Column="1" Grid.Row="1"/>
         
-            <ContentPresenter Content="{Binding Search}" Margin="430,10,429,0"/>
+            <!--<ContentPresenter Content="{Binding Search}" Margin="430,10,429,0"/>
             <ContentPresenter Content="{Binding DirectoryVM}" Margin="10,10,726,0"/>
             <ContentPresenter Content="{Binding TitleButtonVM}" Margin="670,10,66,10"/>
             <ContentPresenter Content="{Binding DateButtonVM}" Margin="877,0,-141,10"/>
             <ContentPresenter Content="{Binding FileButtonArchiveVM}" Margin="471,0,429,512"/>
             <ContentPresenter Content="{Binding RecoverButtonVM}" Margin="0,144,806,303"/>
-            <ContentPresenter Content="{Binding DownloadButtonVM}" Margin="424,144,382,261"/>
+            <ContentPresenter Content="{Binding DownloadButtonVM}" Margin="424,144,382,261"/>-->
         
     </Grid>
    
