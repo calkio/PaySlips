@@ -7,6 +7,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.6*"/>
+        </Grid.RowDefinitions>
         <Label Content="Templates"/>
+        <ContentPresenter Content="{Binding ContainerProductionCalendarVM}" Grid.Column="1" Grid.Row="1"/>
+        <ContentPresenter Content="{Binding ContainerLoadVM}" Grid.Column="2" Grid.Row="1"/>
+        <ContentPresenter Content="{Binding ContainerTeachersScheduleVM}" Grid.Column="1" Grid.Row="2"/>
+        <ContentPresenter Content="{Binding СontainerTeacherHandbookVM}" Grid.Column="2" Grid.Row="2"/>
+        <ContentPresenter Content="{Binding DownloadButtonVM}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
+
     </Grid>
 </UserControl>
