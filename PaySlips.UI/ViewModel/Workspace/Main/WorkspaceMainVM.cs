@@ -54,7 +54,6 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
         {
             _mvvm = mvvm;
             PayslipsCreatorVM = new PayslipsCreatorVM(mvvm);
-            Trash = _mvvm.TrashButtonVM;
             ObservableCollection<BaseVM> buttons = new ObservableCollection<BaseVM>();
             for (int i = 0; i < 150; i++)
             {

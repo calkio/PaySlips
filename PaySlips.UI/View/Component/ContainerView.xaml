@@ -23,15 +23,16 @@
                     </StackPanel>
                 </Border>
 
-                <ContentPresenter Content="{Binding SearchLineVM}" Grid.Row="1"/>
+                <ContentPresenter Content="{Binding SearchLineVM}" 
+                                  Grid.Row="1" VerticalAlignment="Center"/>
               
                 <ScrollViewer Grid.Row="2" Margin="0" 
                               HorizontalContentAlignment="Center"
                               Style="{StaticResource BeautifulScrollViewerStyle}">
-                    <ItemsControl ItemsSource="{Binding Items}">
+                    <ItemsControl ItemsSource="{Binding Items}" HorizontalAlignment="Stretch">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal"/>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>

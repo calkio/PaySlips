@@ -30,8 +30,8 @@ namespace PaySlips.UI.ViewModel.Component
         private IEnumerable<BaseVM> _items;
         public IEnumerable<BaseVM> Items { get => _items; set => Set(ref _items, value); }
 
-        private BaseVM _searchLineVM;
-        public BaseVM SearchLineVM { get => _searchLineVM; set => Set(ref _searchLineVM, value); }
+        private BaseVM _headerVM;
+        public BaseVM HeaderVM { get => _headerVM; set => Set(ref _headerVM, value); }
 
         #endregion
 
@@ -48,11 +48,12 @@ namespace PaySlips.UI.ViewModel.Component
             Items = new List<BaseVM>() { item };
         }
 
+
         public ContainerVM(string title, IEnumerable<BaseVM> items, BaseVM searchLineVM)
         {
             Title = title;
             Items = items;
-            SearchLineVM = searchLineVM;
+            HeaderVM = searchLineVM;
         }
     }
 

@@ -9,5 +9,38 @@
     <Grid>
         <Image Source="{Binding Source}"
                        Stretch="Fill"/>
+
+        <Grid>
+                
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.183*"/>
+                <RowDefinition Height="0.577*"/>
+                <RowDefinition Height="0.239*"/>
+            </Grid.RowDefinitions>
+    
+            <Label Grid.Row="0" 
+                   Content="Загрузить" 
+                   Style="{StaticResource HLabel}"/>
+
+            <Grid Grid.Row="1">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.04*"/>
+                    <ColumnDefinition Width="0.372*"/>
+                    <ColumnDefinition Width="0.173*"/>
+                    <ColumnDefinition Width="0.372*"/>
+                    <ColumnDefinition Width="0.04*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.121*"/>
+                    <RowDefinition Height="0.248*"/>
+                    <RowDefinition Height="0.176*"/>
+                    <RowDefinition Height="0.248*"/>
+                    <RowDefinition Height="0.205*"/>
+                </Grid.RowDefinitions>
+                
+                
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

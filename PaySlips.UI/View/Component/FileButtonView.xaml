@@ -7,6 +7,7 @@
              mc:Ignorable="d">
     <Grid HorizontalAlignment="Stretch" Margin="10">
         <Button 
+            HorizontalAlignment="Stretch"
             HorizontalContentAlignment="Stretch"
             Style="{StaticResource SButton}">
             <DockPanel HorizontalAlignment="Stretch">
@@ -14,7 +15,8 @@
                        Height="60"
                        DockPanel.Dock="Left"/>
                 <Label VerticalAlignment="Center" 
-                       HorizontalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="10,0,0,0"
                        Style="{StaticResource LabelStyle}" 
                        Content="{Binding Name}"
                        DockPanel.Dock="Right"/>

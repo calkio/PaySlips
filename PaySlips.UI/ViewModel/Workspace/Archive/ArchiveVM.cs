@@ -81,7 +81,6 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
                 buttons.Add(new FileButtonArchiveVM(_mvvm));
             }
             _mvvm = mvvm;
-            Trash = _mvvm.TrashButtonVM;
             DirectoryVM = new DirectoryVM(mvvm);
             Search = new SearchLineVM(mvvm);
             TitleButtonVM = new TitleButtonVM(mvvm);
@@ -92,7 +91,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             DownloadButtonVM = new DownloadButtonVM(mvvm);
             RecoverButtonVM = new RecoverButtonVM(mvvm);
 
-            ContainerVM = new ContainerVM("Последние РЛ", buttons,DirectoryVM ,Search, TitleButtonVM,TitleButtonVM);
+            ContainerVM = new ContainerVM("Последние РЛ", buttons, Search );
 
 
 
