@@ -86,7 +86,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
 
             foreach (DirectoryInfo folder in folders)
             {
-                buttons.Add(new FileButtonArchiveVM(_mvvm, folder.Name));
+                buttons.Add(new FileButtonArchiveVM(_mvvm, folder.Name, directoryPath));
             }
             //for (int i = 0; i < 150; i++)
             //{
@@ -101,11 +101,10 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             FileButtonArchiveVM = new FileButtonArchiveVM(mvvm);
             DeleteButtonVM = new DeleteButtonVM(mvvm);
             DeleteAllButtonVM = new DeleteAllButtonVM(mvvm);
-
             RecoverButtonVM = new RecoverButtonVM(mvvm);
             UpPanelVM = new UpPanelVM(mvvm, Search, DirectoryVM, TitleButtonVM, DateButtonVM);
-
             ContainerVM = new ContainerVM("Архивы", buttons, UpPanelVM);
+           
 
 
 

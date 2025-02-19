@@ -19,8 +19,8 @@ namespace PaySlips.UI.ViewModel.Component
 
         #region СВОЙСТВА
 
-        private string _firstLabel = "Hello world1";
-        public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
+        private string _searchLabel = "Hello world1";
+        public string SearchLabel { get => _searchLabel; set => Set(ref _searchLabel, value); }
 
         #endregion
 
@@ -39,6 +39,7 @@ namespace PaySlips.UI.ViewModel.Component
         private void ShowSecondUserControlImpl()
         {
         }
+
 
 
         #endregion

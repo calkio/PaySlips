@@ -16,11 +16,12 @@ namespace PaySlips.UI.ViewModel.Component
         #region ПОЛЯ
 
         private readonly MainVM _mvvm;
-        private readonly string _path = @"C:\Users\maksi\Programming\Ulanov\Test";
 
         #endregion
-
+        //C:\Users\maksi\Programming\Ulanov\Test
         #region СВОЙСТВА
+        private string _path;
+        public string Path { get => _path; set => Set(ref _path, value); }
 
         private string _firstLabel = "24/25_2 Семестр";
         public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
@@ -71,10 +72,11 @@ namespace PaySlips.UI.ViewModel.Component
             _mvvm = mvvm;
         }
 
-        public FileButtonArchiveVM(MainVM mvvm, string firstLabel)
+        public FileButtonArchiveVM(MainVM mvvm, string firstLabel, string path)
         {
             _mvvm = mvvm;
             FirstLabel = firstLabel;
+            Path = path;
         }
     }
 }
