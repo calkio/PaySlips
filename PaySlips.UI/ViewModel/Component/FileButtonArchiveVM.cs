@@ -2,6 +2,8 @@
 using PaySlips.UI.ViewModel.Base;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ namespace PaySlips.UI.ViewModel.Component
         #region ПОЛЯ
 
         private readonly MainVM _mvvm;
+        private readonly string _path = @"C:\Users\maksi\Programming\Ulanov\Test";
 
         #endregion
 
@@ -40,13 +43,38 @@ namespace PaySlips.UI.ViewModel.Component
         {
         }
 
+        public ICommand OpenFolderCommand
+        {
+            get
+            {
+                return new RelayCommand(
+                    (_) => OpenFolder());
+            }
+        }
+
+
 
         #endregion
 
+        // Метод для открытия папки
+        private void OpenFolder()
+        {
+            if (Directory.Exists(_path + "\\" + FirstLabel))
+            {
+                Process.Start("explorer.exe", _path + "\\"+ FirstLabel);
+            }
+
+        }
 
         public FileButtonArchiveVM(MainVM mvvm)
         {
             _mvvm = mvvm;
+        }
+
+        public FileButtonArchiveVM(MainVM mvvm, string firstLabel)
+        {
+            _mvvm = mvvm;
+            FirstLabel = firstLabel;
         }
     }
 }

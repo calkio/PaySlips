@@ -10,7 +10,8 @@
         <Button Grid.ColumnSpan="2"
             HorizontalContentAlignment="Center"
             Style="{StaticResource SButton}"
-                Margin="10">
+            Margin="10"
+            Command="{Binding OpenFolderCommand}">
             <StackPanel Orientation="Horizontal" >
                 <Image Source="/Media/img/file_directory.png" Height="87"/>
                 <Label VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}"  Margin="1,0,0,0" Padding="7" Content="{Binding FirstLabel}"/>
