@@ -17,6 +17,8 @@
     <None Remove="Media\img\folder.png" />
     <None Remove="Media\img\Line_directory.png" />
     <None Remove="Media\img\Minimize.png" />
+    <None Remove="Media\img\NotOkButton.png" />
+    <None Remove="Media\img\OkButton.png" />
     <None Remove="Media\img\search_directory.png" />
     <None Remove="Media\img\STU.png" />
     <None Remove="Media\img\TitleButton.png" />
@@ -34,6 +36,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\img\file_directory.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\NotOkButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Media\img\OkButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Media\img\search_directory.png">

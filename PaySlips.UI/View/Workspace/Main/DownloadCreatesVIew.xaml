@@ -17,10 +17,16 @@
                 <RowDefinition Height="0.577*"/>
                 <RowDefinition Height="0.239*"/>
             </Grid.RowDefinitions>
-    
-            <Label Grid.Row="0" 
-                   Content="Загрузить" 
-                   Style="{StaticResource HLabel}"/>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" 
+                       Content="Загрузить" 
+                       Style="{StaticResource HLabel}"/>
+            </Grid>
 
             <Grid Grid.Row="1">
                 
@@ -38,8 +44,27 @@
                     <RowDefinition Height="0.248*"/>
                     <RowDefinition Height="0.205*"/>
                 </Grid.RowDefinitions>
-                
-                
+
+                <Button Content="Производственный&#10;календарь"
+                        Command="{Binding DownloadСalendar}"
+                        Style="{StaticResource DButton}"
+                        Grid.Row="1" Grid.Column="1"/>
+
+                <Button Content="Нагрузку"
+                        Command="{Binding DownloadСharge}"
+                        Style="{StaticResource DButton}"
+                        Grid.Row="1" Grid.Column="3"/>
+
+                <Button Content="Расписание&#10;преподавателей"
+                        Command="{Binding DownloadScheduler}"
+                        Style="{StaticResource DButton}"
+                        Grid.Row="3" Grid.Column="1"/>
+
+                <Button Content="Справочник&#10;преподавателей"
+                        Command="{Binding DownloadHandbook}"
+                        Style="{StaticResource DButton}"
+                        Grid.Row="3" Grid.Column="3"/>
+
             </Grid>
         </Grid>
     </Grid>
