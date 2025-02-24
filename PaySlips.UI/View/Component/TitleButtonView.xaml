@@ -21,6 +21,7 @@
             </Border>
             <Button Grid.ColumnSpan="2"
         HorizontalContentAlignment="Left"
+                    Command="{Binding SortButtonsCommand}"
         Style="{StaticResource ButtonFilter}">
                 <StackPanel Orientation="Horizontal">
                     <Label VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}"  Margin="9,0,0,0">Название</Label>

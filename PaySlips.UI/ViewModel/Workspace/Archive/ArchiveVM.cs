@@ -97,7 +97,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             Trash = _mvvm.TrashButtonVM;
             DirectoryVM = new DirectoryVM(mvvm);
             Search = new SearchLineVM(mvvm, buttons);
-            TitleButtonVM = new TitleButtonVM(mvvm);
+            TitleButtonVM = new TitleButtonVM(mvvm, buttons);
             DateButtonVM = new DateButtonVM(mvvm);
             FileButtonArchiveVM = new FileButtonArchiveVM(mvvm);
             DeleteButtonVM = new DeleteButtonVM(mvvm);
