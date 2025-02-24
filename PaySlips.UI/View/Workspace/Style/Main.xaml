@@ -35,6 +35,61 @@
         </Style.Triggers>
 
     </Style>
+
+    <Style x:Key="DButton" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0,0,3,3"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Background" Value="#0095DE"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" BorderBrush="#EFEFEF" 
+                        BorderThickness="{TemplateBinding Property=BorderThickness}" 
+                        Background="{TemplateBinding Property=Background}">
+                        <Grid>
+                            <!-- Добавляем Image в левый нижний угол -->
+                            <Image HorizontalAlignment="Left"
+                               VerticalAlignment="Bottom"
+                               Source="{Binding SourceButton}"
+                               Margin="5"
+                               Width="24" Height="24"/>
+                            <!-- Контент кнопки -->
+                            <TextBlock Text="{TemplateBinding Content}" 
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   FontSize="22"
+                                   FontWeight="Medium">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect BlurRadius="5" 
+                                                  ShadowDepth="0" 
+                                                  Direction="270" 
+                                                  Color="Black" 
+                                                  Opacity="0.75"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#4682B4"/>
+                <Setter Property="BorderBrush" Value="#005FA8"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#0095DE"/>
+                <Setter Property="BorderBrush" Value="#0095DE"/>
+                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <!--#endregion-->
 
     <!--#region Label -->

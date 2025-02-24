@@ -19,8 +19,8 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
         private BaseVM _payslipsCreatorVM;
         public BaseVM PayslipsCreatorVM { get => _payslipsCreatorVM; set => Set(ref _payslipsCreatorVM, value); }
 
-        private ContainerVM _lastPayslips;
-        public ContainerVM LastPayslips { get => _lastPayslips; set => Set(ref _lastPayslips, value); }
+        private ListVM _lastPayslips;
+        public ListVM LastPayslips { get => _lastPayslips; set => Set(ref _lastPayslips, value); }
 
         private BaseVM _unallocatedHours;
         public BaseVM UnallocatedHours { get => _unallocatedHours; set => Set(ref _unallocatedHours, value); }
@@ -53,17 +53,16 @@ namespace PaySlips.UI.ViewModel.Workspace.Main
         public WorkspaceMainVM(MainVM mvvm)
         {
             _mvvm = mvvm;
+            _trash = _mvvm.TrashButtonVM;
             PayslipsCreatorVM = new PayslipsCreatorVM(mvvm);
-            Trash = _mvvm.TrashButtonVM;
             ObservableCollection<BaseVM> buttons = new ObservableCollection<BaseVM>();
             for (int i = 0; i < 150; i++)
             {
                 buttons.Add(new FileButtonVM(i.ToString()));
             }
-            LastPayslips = new ContainerVM("Последние РЛ", buttons);
-            LastPayslips.Orientation = System.Windows.Controls.Orientation.Vertical;
+            LastPayslips = new ListVM("Последние РЛ", buttons);
 
-            UnallocatedHours = new ContainerVM("Нераспределенные часы", new FileButtonVM("часы"));
+            UnallocatedHours = new ListVM("Нераспределенные часы", new FileButtonVM("часы"));
         }
     }
 

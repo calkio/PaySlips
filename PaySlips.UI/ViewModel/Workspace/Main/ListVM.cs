@@ -1,16 +1,14 @@
-﻿using PaySlips.UI.Infastructure.Command;
-using PaySlips.UI.ViewModel.Base;
+﻿using PaySlips.UI.ViewModel.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using System.Windows.Input;
 
-namespace PaySlips.UI.ViewModel.Component
+namespace PaySlips.UI.ViewModel.Workspace.Main
 {
-    internal class ContainerVM : BaseVM
+    class ListVM : BaseVM
     {
         #region ПОЛЯ
 
@@ -36,20 +34,20 @@ namespace PaySlips.UI.ViewModel.Component
         #endregion
 
 
-        public ContainerVM(string title, IEnumerable<BaseVM> items)
+        public ListVM(string title, IEnumerable<BaseVM> items)
         {
             Title = title;
             Items = items;
         }
 
-        public ContainerVM(string title, BaseVM item)
+        public ListVM(string title, BaseVM item)
         {
             Title = title;
             Items = new List<BaseVM>() { item };
         }
 
 
-        public ContainerVM(string title, IEnumerable<BaseVM> items, BaseVM searchLineVM)
+        public ListVM(string title, IEnumerable<BaseVM> items, BaseVM searchLineVM)
         {
             Title = title;
             Items = items;
