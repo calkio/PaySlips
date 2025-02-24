@@ -14,6 +14,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
         private readonly MainVM _mvvm;
         private DirectoryInfo[] folders;
         private string directoryPath;
+        ObservableCollection<FileButtonArchiveVM> buttons = new ObservableCollection<FileButtonArchiveVM>();
 
 
         #endregion
@@ -82,7 +83,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             directoryPath = @"C:\Users\maksi\Programming\Ulanov\Test";
             DirectoryInfo directory = new DirectoryInfo(directoryPath);
             folders = directory.GetDirectories();
-            ObservableCollection<BaseVM> buttons = new ObservableCollection<BaseVM>();
+            
 
             foreach (DirectoryInfo folder in folders)
             {
@@ -95,7 +96,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             _mvvm = mvvm;
             Trash = _mvvm.TrashButtonVM;
             DirectoryVM = new DirectoryVM(mvvm);
-            Search = new SearchLineVM(mvvm);
+            Search = new SearchLineVM(mvvm, buttons);
             TitleButtonVM = new TitleButtonVM(mvvm);
             DateButtonVM = new DateButtonVM(mvvm);
             FileButtonArchiveVM = new FileButtonArchiveVM(mvvm);

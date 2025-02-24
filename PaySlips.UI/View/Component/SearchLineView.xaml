@@ -23,6 +23,7 @@
             <TextBox Grid.Column="3" 
              Background="Transparent" 
              BorderBrush="Transparent" 
+             Text="{Binding SearchText}"
              Style="{StaticResource TextBoxFileDirectoryStyle}" 
              VerticalAlignment="Center"
              ></TextBox>
