@@ -92,7 +92,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Archive
             DownloadButtonVM = new DownloadButtonVM(mvvm);
             RecoverButtonVM = new RecoverButtonVM(mvvm);
 
-            ContainerVM = new ContainerVM("Последние РЛ", buttons,DirectoryVM ,Search, TitleButtonVM,TitleButtonVM);
+            ContainerVM = new ContainerVM("Последние РЛ", buttons ,Search);
 
 
 

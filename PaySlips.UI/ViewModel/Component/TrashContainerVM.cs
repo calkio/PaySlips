@@ -1,11 +1,15 @@
 ﻿using PaySlips.UI.Infastructure.Command;
 using PaySlips.UI.ViewModel.Base;
-using PaySlips.UI.ViewModel.Component;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace PaySlips.UI.ViewModel.Workspace.Trash
+namespace PaySlips.UI.ViewModel.Component
 {
-    internal class TrashVM : BaseVM
+    internal class TrashContainerVM : BaseVM
     {
         #region ПОЛЯ
 
@@ -15,12 +19,9 @@ namespace PaySlips.UI.ViewModel.Workspace.Trash
 
         #region СВОЙСТВА
 
-        private string _firstLabel = "Hello world1";
-        public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
+        private string _labelInfo = "О приложении";
+        public string LabelInfo { get => _labelInfo; set => Set(ref _labelInfo, value); }
 
-        private BaseVM _trashContainerVM;
-        public BaseVM TrashContainerVM { get => _trashContainerVM; set => Set(ref _trashContainerVM, value); }
-        
         #endregion
 
         #region КОМАНДЫ
@@ -43,11 +44,9 @@ namespace PaySlips.UI.ViewModel.Workspace.Trash
         #endregion
 
 
-        public TrashVM(MainVM mvvm)
+        public TrashContainerVM(MainVM mvvm)
         {
             _mvvm = mvvm;
-            TrashContainerVM = new TrashContainerVM(mvvm);
         }
     }
-
 }

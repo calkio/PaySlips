@@ -1,5 +1,7 @@
 ﻿using PaySlips.UI.Infastructure.Command;
 using PaySlips.UI.ViewModel.Base;
+using PaySlips.UI.ViewModel.Component;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PaySlips.UI.ViewModel.Workspace.Reference
@@ -16,6 +18,9 @@ namespace PaySlips.UI.ViewModel.Workspace.Reference
 
         private string _firstLabel = "Hello world1";
         public string FirstLabel { get => _firstLabel; set => Set(ref _firstLabel, value); }
+
+        private BaseVM _refContainerVM;
+        public BaseVM RefContainerVM { get => _refContainerVM; set => Set(ref _refContainerVM, value); }
 
         #endregion
 
@@ -42,7 +47,7 @@ namespace PaySlips.UI.ViewModel.Workspace.Reference
         public ReferenceVM(MainVM mvvm)
         {
             _mvvm = mvvm;
+            RefContainerVM = new RefContainerVM(_mvvm);
         }
     }
-
 }

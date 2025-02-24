@@ -123,6 +123,14 @@
             <viewComponent:RecoverButtonView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vmComponent:RefContainerVM}">
+            <viewComponent:RefContainerView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmComponent:TrashContainerVM}">
+            <viewComponent:TrashContainerView/>
+        </DataTemplate>
+
     </Window.Resources>
 
     <Border CornerRadius="8" BorderThickness="2" BorderBrush="#003366">
