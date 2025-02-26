@@ -13,33 +13,29 @@ public class DirectionsServices : IDirectionsService
 
     public async Task<List<Direction>> GetAllDirections()
     {
-        var docTeacher = await _documentService.GetTeacherOverloadings();
-        var docDepartments = await _documentService.GetDepartmentsOverloadings();
-
-        var result = new List<Direction>();
-
-        for (int i = 0; i <= 10; i++)
-        {
-            var value = DirectionsParser.GetTest(docTeacher, i);
-            // тут получаешь данные из парсера
-            result.Add(new Direction
+        // Возвращаем два направления – для БПИ и БИСТ
+        var directions = new List<Direction>
             {
-                //тут нужно заполнить свойства модели данными из парсера
-            });
-        }
-
-        throw new NotImplementedException();
+                new Direction { Name = "Прикладная информатика", AbbreviatedName = "БПИ", Code = "09.03.03" },
+                new Direction { Name = "Информационные системы и технологии", AbbreviatedName = "БИСТ", Code = "09.03.02" }
+            };
+        return directions;
     }
 
-    public Task<List<Group>> GetAllGroups()
+
+    public async Task<List<Group>> GetAllGroups()
     {
-        //по примеру GetAllDirections()
-        throw new NotImplementedException();
+        byte[] teacherDoc = await _documentService.GetTeacherOverloadings();
+        byte[] scheduleDoc = await _documentService.GetDepartmentsOverloadings();
+        // Объединяем данные из почасовки и расписания
+        var groups = DirectionsParser.MergeGroups(teacherDoc, scheduleDoc);
+        return groups;
     }
+
 
     public Task<List<Group>> GetGroupsByDirection()
     {
-        //по примеру GetAllDirections()
+        // Пример: можно вызвать GetAllGroups() и затем сгруппировать по направлению
         throw new NotImplementedException();
     }
 }
