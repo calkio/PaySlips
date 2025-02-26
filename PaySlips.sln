@@ -6,6 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2EA7DDBA-C567-4AC4-9370-71D91D5BB850}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{FDC3082E-CB25-4A00-AEB7-638A0C7E5F4E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Downloads\Telegram Desktop\teacherOverloadings21.xls.xlsx = ..\..\Downloads\Telegram Desktop\teacherOverloadings21.xls.xlsx
+		..\..\Users\Я\source\repos\ConsoleParser\Расписание_кафедры_1_семестр_2023_2024_от_01_09_2024_2.xls = ..\..\Users\Я\source\repos\ConsoleParser\Расписание_кафедры_1_семестр_2023_2024_от_01_09_2024_2.xls
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{578DF221-4CCB-419A-9D38-BC14DC353330}"
 EndProject
@@ -19,7 +23,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4863FA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E84F6235-FF17-4EA6-B0D3-E080F5FC21DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaySlips.Core", "PaySlips.Core\PaySlips.Core.csproj", "{5687FD66-A153-4B14-BFFE-E0C4750DAD35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaySlips.Core", "PaySlips.Core\PaySlips.Core.csproj", "{5687FD66-A153-4B14-BFFE-E0C4750DAD35}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaySlips.Infrastructure", "PaySlips.Infrastructure\PaySlips.Infrastructure.csproj", "{57F1277E-FC82-4DC7-9DD9-D9E868AD9E57}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5687FD66-A153-4B14-BFFE-E0C4750DAD35} = {5687FD66-A153-4B14-BFFE-E0C4750DAD35}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{3751FDE5-DE93-47D3-993E-37EFFAB06B3B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5687FD66-A153-4B14-BFFE-E0C4750DAD35} = {5687FD66-A153-4B14-BFFE-E0C4750DAD35}
+		{57F1277E-FC82-4DC7-9DD9-D9E868AD9E57} = {57F1277E-FC82-4DC7-9DD9-D9E868AD9E57}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +46,14 @@ Global
 		{5687FD66-A153-4B14-BFFE-E0C4750DAD35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5687FD66-A153-4B14-BFFE-E0C4750DAD35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5687FD66-A153-4B14-BFFE-E0C4750DAD35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F1277E-FC82-4DC7-9DD9-D9E868AD9E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F1277E-FC82-4DC7-9DD9-D9E868AD9E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F1277E-FC82-4DC7-9DD9-D9E868AD9E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F1277E-FC82-4DC7-9DD9-D9E868AD9E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3751FDE5-DE93-47D3-993E-37EFFAB06B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3751FDE5-DE93-47D3-993E-37EFFAB06B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3751FDE5-DE93-47D3-993E-37EFFAB06B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3751FDE5-DE93-47D3-993E-37EFFAB06B3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +65,10 @@ Global
 		{4863FA10-C8DA-4B48-9587-DEC27012BC90} = {2EA7DDBA-C567-4AC4-9370-71D91D5BB850}
 		{E84F6235-FF17-4EA6-B0D3-E080F5FC21DD} = {2EA7DDBA-C567-4AC4-9370-71D91D5BB850}
 		{5687FD66-A153-4B14-BFFE-E0C4750DAD35} = {E84F6235-FF17-4EA6-B0D3-E080F5FC21DD}
+		{57F1277E-FC82-4DC7-9DD9-D9E868AD9E57} = {A9BBA6AE-CDB7-4F05-B089-F1E24499908F}
+		{3751FDE5-DE93-47D3-993E-37EFFAB06B3B} = {578DF221-4CCB-419A-9D38-BC14DC353330}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E807330-90AC-4A21-A6A4-3A33A3EDD57C}
 	EndGlobalSection
 EndGlobal

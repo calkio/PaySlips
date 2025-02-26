@@ -10,4 +10,8 @@
     <PackageReference Include="NPOI" Version="2.7.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PaySlips.Core\PaySlips.Core.csproj" />
+  </ItemGroup>
+
 </Project>
